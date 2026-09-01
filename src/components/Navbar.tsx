@@ -2,6 +2,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import logoLight from '../../public/assets/bizlogov4-cropped.png';
+import logoDark from '../../public/assets/bizlogov4-cropped-dark.png';
 import {
   X,
   ArrowRight,
@@ -168,7 +170,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenTrial }) => {
                 aria-label="BizMagnets Home"
               >
                 <Image
-                  src={theme === 'dark' ? '/assets/bizlogov4-cropped-dark.png' : '/assets/bizlogov4-cropped.png'}
+                  src={theme === 'dark' ? logoDark : logoLight}
                   alt="BizMagnets"
                   width={735}
                   height={197}

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import logoMark from '../../public/assets/logo-mark.png';
 
 export const Footer: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ export const Footer: React.FC = () => {
         <div className="flex flex-wrap items-center justify-between gap-6 pb-8 border-b border-white/10">
           <div className="flex items-center gap-3">
             <Image
-              src="/assets/logo-mark.png"
+              src={logoMark}
               alt="BizMagnets"
               width={32}
               height={32}
