@@ -42,11 +42,51 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
     <section id="top" className="relative overflow-hidden pt-24 pb-16 lg:pb-24">
       {/* Background Decorative Gradient Blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-0 right-0 h-[220px] bg-gradient-to-b from-[#12A150]/15 to-transparent" />
-        <div className="absolute -top-16 -left-10 w-[420px] h-[420px] rounded-full bg-radial from-[#1A73E8]/25 to-transparent animate-bm-float" />
-        <div className="absolute -top-20 left-[40%] w-[380px] h-[380px] rounded-full bg-radial from-[#25D366]/30 to-transparent animate-bm-float" />
-        <div className="absolute -top-14 right-[14%] w-[300px] h-[300px] rounded-full bg-radial from-[#F9AB00]/24 to-transparent animate-bm-float" />
-        <div className="absolute top-32 -right-24 w-[420px] h-[420px] rounded-full bg-radial from-[#12A150]/20 to-transparent animate-bm-float" />
+        <div className="absolute top-0 left-0 right-0 h-[220px] bg-gradient-to-b from-[#12A150]/20 to-transparent" />
+        
+        {/* Glowing Colorful Radial Floating Blobs that shine through Glassy Navbar and Hero */}
+        <div
+          className="absolute -top-[70px] -left-[40px] w-[420px] h-[420px] rounded-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(26, 115, 232, 0.32), transparent 68%)',
+            animation: 'bmFloat 13s ease-in-out infinite',
+          }}
+        />
+        <div
+          className="absolute -top-[90px] left-[36%] w-[420px] h-[420px] rounded-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(37, 211, 102, 0.36), transparent 68%)',
+            animation: 'bmFloat 11s ease-in-out 0.4s infinite',
+          }}
+        />
+        <div
+          className="absolute -top-[60px] right-[12%] w-[340px] h-[340px] rounded-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(249, 171, 0, 0.30), transparent 68%)',
+            animation: 'bmFloat 14s ease-in-out 1.2s infinite',
+          }}
+        />
+        <div
+          className="absolute top-[120px] -right-[100px] w-[440px] h-[440px] rounded-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(18, 161, 80, 0.28), transparent 68%)',
+            animation: 'bmFloat 16s ease-in-out 1s infinite',
+          }}
+        />
+        <div
+          className="absolute bottom-[-160px] left-[34%] w-[540px] h-[540px] rounded-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(249, 171, 0, 0.24), transparent 68%)',
+            animation: 'bmFloat 18s ease-in-out 0.6s infinite',
+          }}
+        />
+        <div
+          className="absolute bottom-[20px] right-[22%] w-[340px] h-[340px] rounded-full pointer-events-none"
+          style={{
+            background: 'radial-gradient(circle, rgba(234, 51, 35, 0.22), transparent 68%)',
+            animation: 'bmFloat 15s ease-in-out 2s infinite',
+          }}
+        />
         
         {/* Animated Light-Themed Green SVG Message Icons Background */}
         <svg

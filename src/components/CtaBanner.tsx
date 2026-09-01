@@ -12,11 +12,35 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenDemo, onOpenTrial })
   return (
     <section id="trial" className="relative bg-[#111C34] text-white overflow-hidden py-20 lg:py-28">
       {/* Background Animated Blobs */}
-      <div className="absolute inset-0 pointer-events-none opacity-50">
-        <div className="absolute -top-36 -left-16 w-[420px] h-[420px] rounded-full bg-radial from-[#1A73E8]/55 to-transparent animate-bm-float" />
-        <div className="absolute -bottom-40 right-[6%] w-[460px] h-[460px] rounded-full bg-radial from-[#12A150]/45 to-transparent animate-bm-float" />
-        <div className="absolute top-[20%] right-[34%] w-[280px] h-[280px] rounded-full bg-radial from-[#F9AB00]/38 to-transparent animate-bm-float" />
-        <div className="absolute bottom-[12%] left-[26%] w-[240px] h-[240px] rounded-full bg-radial from-[#EA3323]/34 to-transparent animate-bm-float" />
+      <div className="absolute inset-0 pointer-events-none opacity-60">
+        <div
+          className="absolute -top-36 -left-16 w-[420px] h-[420px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(26, 115, 232, 0.55), transparent 68%)',
+            animation: 'bmFloat 13s ease-in-out infinite',
+          }}
+        />
+        <div
+          className="absolute -bottom-40 right-[6%] w-[460px] h-[460px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(18, 161, 80, 0.45), transparent 68%)',
+            animation: 'bmFloat 16s ease-in-out 1s infinite',
+          }}
+        />
+        <div
+          className="absolute top-[20%] right-[34%] w-[280px] h-[280px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(249, 171, 0, 0.38), transparent 68%)',
+            animation: 'bmFloat 14s ease-in-out 1.2s infinite',
+          }}
+        />
+        <div
+          className="absolute bottom-[12%] left-[26%] w-[240px] h-[240px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(234, 51, 35, 0.34), transparent 68%)',
+            animation: 'bmFloat 15s ease-in-out 2s infinite',
+          }}
+        />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
