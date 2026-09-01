@@ -243,7 +243,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenTrial }) => {
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-between mb-4 sm:mb-6">
               <Image
-                src={theme === 'dark' ? '/assets/bizlogov4-cropped-dark.png' : '/assets/bizlogov4-cropped.png'}
+                src={theme === 'dark' ? logoDark : logoLight}
                 alt="BizMagnets Logo"
                 width={735}
                 height={197}
