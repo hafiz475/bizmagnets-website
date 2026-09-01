@@ -20,11 +20,11 @@ export const Integrations: React.FC = () => {
       <BizPatternBackground opacity={0.16} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#111C34] max-w-3xl mx-auto mb-4 text-balance">
-          Your systems stay. <span className="text-[#1A73E8]">BizMagnets connects the gaps.</span>
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#111C34] dark:text-[#EDF1FA] max-w-3xl mx-auto mb-4 text-balance">
+          Your systems stay. <span className="text-[#1A73E8] dark:text-[#4C9AFF]">BizMagnets connects the gaps.</span>
         </h2>
 
-        <p className="text-base sm:text-lg text-[#5C6B85] max-w-2xl mx-auto mb-12">
+        <p className="text-base sm:text-lg text-[#5C6B85] dark:text-[#93A1BE] max-w-2xl mx-auto mb-12">
           Nobody wants another migration. Keep the CRM you fought for — we&rsquo;ll just make sure it hears about what happened on WhatsApp.
         </p>
 
@@ -36,7 +36,7 @@ export const Integrations: React.FC = () => {
               return (
                 <span
                   key={idx}
-                  className="inline-flex items-center gap-2.5 px-5 py-3 rounded-full bg-white/80 border border-[#111C34]/10 backdrop-blur-md shadow-md text-sm font-bold text-[#111C34] hover:scale-105 transition-transform"
+                  className="inline-flex items-center gap-2.5 px-5 py-3 rounded-full bg-white/80 dark:bg-white/5 border border-[#111C34]/10 dark:border-white/10 backdrop-blur-md shadow-md text-sm font-bold text-[#111C34] dark:text-[#EDF1FA] hover:scale-105 transition-transform"
                   style={{ borderColor: `${sys.color}40`, boxShadow: `0 10px 24px ${sys.color}15` }}
                 >
                   <IconComp className="w-4 h-4" style={{ color: sys.color }} />

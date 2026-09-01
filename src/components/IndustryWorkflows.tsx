@@ -59,20 +59,20 @@ export const IndustryWorkflows: React.FC = () => {
   const current = INDUSTRIES[activeTab];
 
   return (
-    <section id="industries" className="relative bg-gradient-to-b from-[#F7FAFF] to-white border-t border-[#111C34]/10 overflow-hidden py-16 lg:py-24">
+    <section id="industries" className="relative bg-gradient-to-b from-[#F7FAFF] to-white dark:from-[#0D1730] dark:to-[#0A0F1E] border-t border-[#111C34]/10 dark:border-white/10 overflow-hidden py-16 lg:py-24">
       {/* 12-Icon Multi-Communication Animated Background */}
       <BizPatternBackground opacity={0.16} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-xs font-bold tracking-widest text-[#EA3323] mb-3">
+        <div className="text-xs font-bold tracking-widest text-[#EA3323] dark:text-[#FF6B5E] mb-3">
           ONE PLATFORM. MANY INDUSTRIES.
         </div>
 
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#111C34] mb-4 text-balance">
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#111C34] dark:text-[#EDF1FA] mb-4 text-balance">
           Whatever your industry, the workflow starts with a conversation.
         </h2>
 
-        <p className="text-base sm:text-lg text-[#5C6B85] max-w-xl mb-8">
+        <p className="text-base sm:text-lg text-[#5C6B85] dark:text-[#93A1BE] max-w-xl mb-8">
           Pick yours. We&rsquo;ll show you the chain, not a brochure.
         </p>
 
@@ -86,8 +86,8 @@ export const IndustryWorkflows: React.FC = () => {
                 onClick={() => setActiveTab(idx)}
                 className={`px-5 py-3 rounded-full text-sm font-bold transition-all backdrop-blur-md shadow-sm ${
                   isSelected
-                    ? 'bg-[#111C34] text-white shadow-lg scale-105'
-                    : 'bg-white/80 text-[#111C34] hover:bg-white border border-[#111C34]/10'
+                    ? 'bg-[#111C34] dark:bg-[#4C9AFF] text-white dark:text-[#0A0F1E] shadow-lg scale-105'
+                    : 'bg-white/80 dark:bg-white/5 text-[#111C34] dark:text-[#EDF1FA] hover:bg-white dark:hover:bg-white/10 border border-[#111C34]/10 dark:border-white/10'
                 }`}
               >
                 {tab.name}
@@ -97,12 +97,12 @@ export const IndustryWorkflows: React.FC = () => {
         </div>
 
         {/* Active Industry Chain Box */}
-        <div className="rounded-3xl p-6 sm:p-10 bg-white/80 border border-white/95 backdrop-blur-xl shadow-xl shadow-[#111C34]/10">
-          <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#111C34] mb-2">
+        <div className="rounded-3xl p-6 sm:p-10 bg-white/80 dark:bg-white/5 border border-white/95 dark:border-white/10 backdrop-blur-xl shadow-xl shadow-[#111C34]/10">
+          <h3 className="font-display text-2xl sm:text-3xl font-extrabold text-[#111C34] dark:text-[#EDF1FA] mb-2">
             {current.title}
           </h3>
 
-          <p className="text-base text-[#5C6B85] mb-8 max-w-2xl leading-relaxed">
+          <p className="text-base text-[#5C6B85] dark:text-[#93A1BE] mb-8 max-w-2xl leading-relaxed">
             {current.copy}
           </p>
 
@@ -110,7 +110,7 @@ export const IndustryWorkflows: React.FC = () => {
             {current.chain.map((step, idx) => (
               <React.Fragment key={idx}>
                 <div
-                  className="flex items-center gap-2.5 rounded-2xl px-5 py-3.5 font-bold text-sm text-[#111C34] border shadow-sm min-w-[130px]"
+                  className="flex items-center gap-2.5 rounded-2xl px-5 py-3.5 font-bold text-sm text-[#111C34] dark:text-[#EDF1FA] border shadow-sm min-w-[130px]"
                   style={{
                     backgroundColor: `${current.color}10`,
                     borderColor: `${current.color}35`,
@@ -120,7 +120,7 @@ export const IndustryWorkflows: React.FC = () => {
                   {step}
                 </div>
                 {idx < current.chain.length - 1 && (
-                  <ArrowRight className="w-5 h-5 text-[#111C34]/30 hidden sm:block" />
+                  <ArrowRight className="w-5 h-5 text-[#111C34]/30 dark:text-white/30 hidden sm:block" />
                 )}
               </React.Fragment>
             ))}

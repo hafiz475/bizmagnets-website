@@ -17,21 +17,21 @@ export const CaseStudySection: React.FC<CaseStudyProps> = ({ onOpenDemo }) => {
           CUSTOMER STORY · HEALTHCARE
         </div>
 
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#111C34] max-w-3xl mb-4 text-balance">
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#111C34] dark:text-[#EDF1FA] max-w-3xl mb-4 text-balance">
           9,800+ man-days saved. Athulya stopped chasing, started closing.
         </h2>
 
-        <p className="text-base sm:text-lg text-[#5C6B85] max-w-2xl mb-12">
+        <p className="text-base sm:text-lg text-[#5C6B85] dark:text-[#93A1BE] max-w-2xl mb-12">
           Patient onboarding, appointment coordination and service escalation — all running through the channel families already use.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Card 1 - BEFORE */}
-          <div className="rounded-3xl p-6 sm:p-8 bg-white/70 border border-white/95 backdrop-blur-md shadow-lg shadow-[#EA3323]/10">
-            <div className="text-xs font-bold tracking-widest text-[#EA3323] mb-6">
+          <div className="rounded-3xl p-6 sm:p-8 bg-white/70 dark:bg-white/5 border border-white/95 dark:border-white/10 backdrop-blur-md shadow-lg shadow-[#EA3323]/10">
+            <div className="text-xs font-bold tracking-widest text-[#EA3323] dark:text-[#FF6B5E] mb-6">
               BEFORE
             </div>
-            <div className="space-y-3 font-semibold text-sm text-[#111C34]">
+            <div className="space-y-3 font-semibold text-sm text-[#111C34] dark:text-[#EDF1FA]">
               <div className="flex items-center gap-2.5">
                 <XCircle className="w-4 h-4 text-[#EA3323]" /> WhatsApp groups
               </div>
@@ -51,11 +51,11 @@ export const CaseStudySection: React.FC<CaseStudyProps> = ({ onOpenDemo }) => {
           </div>
 
           {/* Card 2 - WITH BIZMAGNETS */}
-          <div className="rounded-3xl p-6 sm:p-8 bg-white/70 border border-white/95 backdrop-blur-md shadow-lg shadow-[#1A73E8]/12">
-            <div className="text-xs font-bold tracking-widest text-[#1A73E8] mb-6">
+          <div className="rounded-3xl p-6 sm:p-8 bg-white/70 dark:bg-white/5 border border-white/95 dark:border-white/10 backdrop-blur-md shadow-lg shadow-[#1A73E8]/12">
+            <div className="text-xs font-bold tracking-widest text-[#1A73E8] dark:text-[#4C9AFF] mb-6">
               WITH BIZMAGNETS
             </div>
-            <div className="space-y-3 font-semibold text-sm text-[#111C34]">
+            <div className="space-y-3 font-semibold text-sm text-[#111C34] dark:text-[#EDF1FA]">
               <div className="flex items-center gap-2.5">
                 <CheckCircle2 className="w-4 h-4 text-[#12A150]" /> Structured workflows
               </div>
@@ -103,7 +103,7 @@ export const CaseStudySection: React.FC<CaseStudyProps> = ({ onOpenDemo }) => {
           </button>
           <button
             onClick={onOpenDemo}
-            className="inline-flex items-center gap-2 text-[#111C34] font-display font-extrabold text-sm sm:text-base px-6 py-3 rounded-full border-2 border-[#111C34] hover:bg-[#111C34] hover:text-white transition-all"
+            className="inline-flex items-center gap-2 text-[#111C34] dark:text-[#EDF1FA] font-display font-extrabold text-sm sm:text-base px-6 py-3 rounded-full border-2 border-[#111C34] dark:border-white hover:bg-[#111C34] dark:hover:bg-white hover:text-white dark:hover:text-[#111C34] transition-all"
           >
             <Play className="w-4 h-4 fill-current" /> Watch Customer Story
           </button>

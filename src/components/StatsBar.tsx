@@ -8,7 +8,7 @@ interface StatsBarProps {
 
 export const StatsBar: React.FC<StatsBarProps> = ({ onOpenStory }) => {
   return (
-    <section id="customers" className="relative bg-gradient-to-r from-[#F2FBF5] to-[#EFF6FF] border-y border-[#111C34]/10 overflow-hidden py-12 lg:py-16">
+    <section id="customers" className="relative bg-gradient-to-r from-[#F2FBF5] to-[#EFF6FF] dark:from-[#0E1A16] dark:to-[#0B1930] border-y border-[#111C34]/10 dark:border-white/10 overflow-hidden py-12 lg:py-16">
       {/* 12-Icon Multi-Communication Animated Background */}
       <BizPatternBackground opacity={0.18} />
 
@@ -21,17 +21,17 @@ export const StatsBar: React.FC<StatsBarProps> = ({ onOpenStory }) => {
             PROVEN IN REAL OPERATIONS
           </div>
 
-          <div className="font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-none tracking-tight text-[#111C34]">
-            9,800<span className="text-[#12A150]">+</span>
+          <div className="font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-none tracking-tight text-[#111C34] dark:text-[#EDF1FA]">
+            9,800<span className="text-[#12A150] dark:text-[#3DDC8A]">+</span>
           </div>
 
-          <div className="font-display text-lg sm:text-xl font-bold text-[#111C34] mt-2">
+          <div className="font-display text-lg sm:text-xl font-bold text-[#111C34] dark:text-[#EDF1FA] mt-2">
             man-days saved
           </div>
         </div>
 
         <div>
-          <p className="text-base sm:text-lg text-[#111C34] leading-relaxed mb-4 max-w-lg">
+          <p className="text-base sm:text-lg text-[#111C34] dark:text-[#EDF1FA] leading-relaxed mb-4 max-w-lg">
             That&rsquo;s roughly 27 years of &ldquo;just following up on this&rdquo; — handed back to Athulya&rsquo;s teams.
           </p>
 

@@ -9,155 +9,151 @@ interface GlobeCanvasProps {
   size?: number;
 }
 
-interface CityUserData {
+interface GlobeUser {
   id: string;
   coords: [number, number];
-  city: string;
   name: string;
   role: string;
-  skin: string;
-  hair: string;
-  hairStyle: 'short' | 'curly' | 'bun' | 'ponytail' | 'side' | 'bob';
-  shirt: string;
+  avatarUrl: string;
   ringColor: string;
-  glasses?: boolean;
+  statusTag: string;
+  tagColor: string;
+  message: string;
+  cardOffset: { x: number; y: number };
 }
 
-const CITY_USERS: CityUserData[] = [
+const GLOBE_USERS: GlobeUser[] = [
   {
-    id: 'nyc',
-    coords: [-74.006, 40.7128],
-    city: 'New York',
-    name: 'Sarah K.',
-    role: 'Ops Lead',
-    skin: '#FAD2B8',
-    hair: '#4A2C11',
-    hairStyle: 'ponytail',
-    shirt: '#1A73E8',
+    id: 'user-1',
+    coords: [-74.006, 40.7128], // New York
+    name: 'Sarah Jenkins',
+    role: 'Operations Lead',
+    avatarUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=160&auto=format&fit=crop&q=80',
     ringColor: '#1A73E8',
-    glasses: true,
+    statusTag: 'CONFIRMED',
+    tagColor: '#12A150',
+    message: '📅 Appointment set · Dr. Menon Thu 11:30',
+    cardOffset: { x: 22, y: -48 },
   },
   {
-    id: 'lon',
-    coords: [-0.1278, 51.5074],
-    city: 'London',
-    name: 'James W.',
-    role: 'Support',
-    skin: '#F8D8BE',
-    hair: '#6C4827',
-    hairStyle: 'short',
-    shirt: '#111C34',
+    id: 'user-2',
+    coords: [-122.4194, 37.7749], // San Francisco
+    name: 'Alex Rivera',
+    role: 'Workflows Lead',
+    avatarUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&auto=format&fit=crop&q=80',
+    ringColor: '#12A150',
+    statusTag: 'SLA MET',
+    tagColor: '#1A73E8',
+    message: '⚡ Ticket #2910 auto-routed to Tier 2',
+    cardOffset: { x: -190, y: -45 },
+  },
+  {
+    id: 'user-3',
+    coords: [-0.1278, 51.5074], // London
+    name: 'James Wilson',
+    role: 'Support Manager',
+    avatarUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&auto=format&fit=crop&q=80',
     ringColor: '#EA3323',
+    statusTag: 'LIVE GPS',
+    tagColor: '#EA3323',
+    message: '🚚 Field Tech dispatched · En route',
+    cardOffset: { x: 22, y: -46 },
   },
   {
-    id: 'tyo',
-    coords: [139.6917, 35.6895],
-    city: 'Tokyo',
-    name: 'Kenji T.',
-    role: 'Logistics',
-    skin: '#F6DEC6',
-    hair: '#1E1E24',
-    hairStyle: 'side',
-    shirt: '#EA3323',
-    ringColor: '#12A150',
-  },
-  {
-    id: 'par',
-    coords: [2.3522, 48.8566],
-    city: 'Paris',
-    name: 'Amélie D.',
-    role: 'Care Coord',
-    skin: '#FFE3D1',
-    hair: '#9E5B28',
-    hairStyle: 'bob',
-    shirt: '#12A150',
+    id: 'user-4',
+    coords: [2.3522, 48.8566], // Paris
+    name: 'Amélie Dubois',
+    role: 'Care Coordinator',
+    avatarUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=160&auto=format&fit=crop&q=80',
     ringColor: '#1A73E8',
+    statusTag: 'CSAT 5★',
+    tagColor: '#F9AB00',
+    message: '⭐ Feedback received: 5/5 on WhatsApp',
+    cardOffset: { x: 22, y: -46 },
   },
   {
-    id: 'dxb',
-    coords: [55.2708, 25.2048],
-    city: 'Dubai',
-    name: 'Tariq A.',
-    role: 'Facility Ops',
-    skin: '#D9A16E',
-    hair: '#111827',
-    hairStyle: 'short',
-    shirt: '#F9AB00',
+    id: 'user-5',
+    coords: [55.2708, 25.2048], // Dubai
+    name: 'Tariq Al-Mansoor',
+    role: 'Facility Head',
+    avatarUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=160&auto=format&fit=crop&q=80',
     ringColor: '#F9AB00',
+    statusTag: 'APPROVED',
+    tagColor: '#12A150',
+    message: '🔧 HVAC maintenance SLA verified',
+    cardOffset: { x: 22, y: -46 },
   },
   {
-    id: 'sin',
-    coords: [103.8198, 1.3521],
-    city: 'Singapore',
-    name: 'Mei Lin',
-    role: 'E-commerce',
-    skin: '#F8E0CB',
-    hair: '#1A1A1A',
-    hairStyle: 'bob',
-    shirt: '#1A73E8',
+    id: 'user-6',
+    coords: [72.8777, 19.076], // Mumbai
+    name: 'Priya Sharma',
+    role: 'Ticketing Lead',
+    avatarUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=160&auto=format&fit=crop&q=80',
     ringColor: '#12A150',
-    glasses: true,
+    statusTag: 'PAID ₹4.5k',
+    tagColor: '#12A150',
+    message: '💳 WhatsApp In-Chat Payment settled',
+    cardOffset: { x: 22, y: -46 },
   },
   {
-    id: 'syd',
-    coords: [151.2093, -33.8688],
-    city: 'Sydney',
-    name: 'Liam M.',
-    role: 'Field Lead',
-    skin: '#FADCB9',
-    hair: '#C89243',
-    hairStyle: 'short',
-    shirt: '#12A150',
+    id: 'user-7',
+    coords: [103.8198, 1.3521], // Singapore
+    name: 'Mei Lin Chen',
+    role: 'E-Commerce Ops',
+    avatarUrl: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=160&auto=format&fit=crop&q=80',
+    ringColor: '#1A73E8',
+    statusTag: 'ORDER #889',
+    tagColor: '#1A73E8',
+    message: '📦 WhatsApp Catalogue Cart synced',
+    cardOffset: { x: 22, y: -46 },
+  },
+  {
+    id: 'user-8',
+    coords: [139.6917, 35.6895], // Tokyo
+    name: 'Kenji Takahashi',
+    role: 'Logistics Dir',
+    avatarUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=160&auto=format&fit=crop&q=80',
     ringColor: '#EA3323',
+    statusTag: 'DISPATCHED',
+    tagColor: '#EA3323',
+    message: '📍 Delivery proof photo captured',
+    cardOffset: { x: 22, y: -46 },
   },
   {
-    id: 'sao',
-    coords: [-46.6333, -23.5505],
-    city: 'São Paulo',
-    name: 'Gabriela S.',
-    role: 'Sales Dir',
-    skin: '#BA7A48',
-    hair: '#261C14',
-    hairStyle: 'curly',
-    shirt: '#EA3323',
-    ringColor: '#F9AB00',
-  },
-  {
-    id: 'bom',
-    coords: [72.8777, 19.076],
-    city: 'Mumbai',
-    name: 'Rajesh P.',
-    role: 'Ticketing',
-    skin: '#A96B3E',
-    hair: '#1A1A1A',
-    hairStyle: 'short',
-    shirt: '#1A73E8',
-    ringColor: '#1A73E8',
-    glasses: true,
-  },
-  {
-    id: 'cpt',
-    coords: [18.4241, -33.9249],
-    city: 'Cape Town',
-    name: 'Zola N.',
-    role: 'Dispatch',
-    skin: '#6E4327',
-    hair: '#101010',
-    hairStyle: 'bun',
-    shirt: '#F9AB00',
+    id: 'user-9',
+    coords: [151.2093, -33.8688], // Sydney
+    name: 'Liam Miller',
+    role: 'Field Service',
+    avatarUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=160&auto=format&fit=crop&q=80',
     ringColor: '#12A150',
+    statusTag: 'SITE VISIT',
+    tagColor: '#F9AB00',
+    message: '🏠 Property enquiry qualified via CTWA',
+    cardOffset: { x: -190, y: -45 },
   },
   {
-    id: 'sfo',
-    coords: [-122.4194, 37.7749],
-    city: 'San Francisco',
-    name: 'Alex R.',
-    role: 'Workflows',
-    skin: '#FBDDC0',
-    hair: '#503521',
-    hairStyle: 'side',
-    shirt: '#111C34',
-    ringColor: '#1A73E8',
+    id: 'user-10',
+    coords: [-46.6333, -23.5505], // Sao Paulo
+    name: 'Gabriela Santos',
+    role: 'Sales Director',
+    avatarUrl: 'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=160&auto=format&fit=crop&q=80',
+    ringColor: '#F9AB00',
+    statusTag: 'LEAD WON',
+    tagColor: '#12A150',
+    message: '🎯 Auto-drip sequence closed deal',
+    cardOffset: { x: -190, y: -45 },
+  },
+  {
+    id: 'user-11',
+    coords: [18.4241, -33.9249], // Cape Town
+    name: 'Zola Ndlovu',
+    role: 'Care Dispatch',
+    avatarUrl: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=160&auto=format&fit=crop&q=80',
+    ringColor: '#12A150',
+    statusTag: 'SHIFT SET',
+    tagColor: '#1A73E8',
+    message: '🏥 Home care nurse assigned for 14:00',
+    cardOffset: { x: 22, y: -46 },
   },
 ];
 
@@ -172,14 +168,14 @@ const FLOWS = [
   { from: [18.4241, -33.9249] as [number, number], to: [55.2708, 25.2048] as [number, number], color: '#12A150' },
 ];
 
-export const GlobeCanvas: React.FC<GlobeCanvasProps> = ({ size = 480 }) => {
+export const GlobeCanvas: React.FC<GlobeCanvasProps> = ({ size = 520 }) => {
   const svgRef = useRef<SVGSVGElement | null>(null);
 
   useEffect(() => {
     if (!svgRef.current) return;
 
     const W = size;
-    const R = W / 2 - 18;
+    const R = W / 2 - 28;
     const svg = d3.select(svgRef.current);
     svg.selectAll('*').remove();
 
@@ -211,7 +207,7 @@ export const GlobeCanvas: React.FC<GlobeCanvasProps> = ({ size = 480 }) => {
       ['100%', '#12A150'],
     ].forEach(([o, c]) => rim.append('stop').attr('offset', o).attr('stop-color', c));
 
-    // Glow filter
+    // Glow filter for globe rim
     const glow = defs
       .append('filter')
       .attr('id', 'g-glow-react')
@@ -224,10 +220,35 @@ export const GlobeCanvas: React.FC<GlobeCanvasProps> = ({ size = 480 }) => {
     m.append('feMergeNode').attr('in', 'b');
     m.append('feMergeNode').attr('in', 'SourceGraphic');
 
-    // Avatar clip path definitions
-    CITY_USERS.forEach((u) => {
-      const clip = defs.append('clipPath').attr('id', `clip-user-${u.id}`);
-      clip.append('circle').attr('cx', 0).attr('cy', 0).attr('r', 10.5);
+    // Card drop shadow filter
+    const cardShadow = defs
+      .append('filter')
+      .attr('id', 'card-drop-shadow')
+      .attr('x', '-20%')
+      .attr('y', '-20%')
+      .attr('width', '150%')
+      .attr('height', '150%');
+    cardShadow
+      .append('feDropShadow')
+      .attr('dx', '0')
+      .attr('dy', '4')
+      .attr('stdDeviation', '6')
+      .attr('flood-color', '#111C34')
+      .attr('flood-opacity', '0.14');
+
+    // Avatar & Card clip path definitions
+    GLOBE_USERS.forEach((u) => {
+      const clip = defs.append('clipPath').attr('id', `photo-clip-${u.id}`);
+      clip.append('circle').attr('cx', 0).attr('cy', 0).attr('r', 14);
+
+      const cardClip = defs.append('clipPath').attr('id', `card-clip-${u.id}`);
+      cardClip
+        .append('rect')
+        .attr('x', 0)
+        .attr('y', 0)
+        .attr('width', 178)
+        .attr('height', 48)
+        .attr('rx', 12);
     });
 
     const proj = d3
@@ -301,138 +322,131 @@ export const GlobeCanvas: React.FC<GlobeCanvasProps> = ({ size = 480 }) => {
       .attr('stroke-dasharray', '7 7')
       .attr('opacity', 0.9);
 
-    // User Avatar City Markers
-    const cityG = svg
+    // Real Person User Marker Groups
+    const userMarkerG = svg
       .append('g')
       .selectAll('g')
-      .data(CITY_USERS)
+      .data(GLOBE_USERS)
       .enter()
       .append('g')
-      .attr('class', 'user-marker group cursor-pointer');
+      .attr('class', 'globe-user-marker');
 
-    // 1. Drop Shadow Circle
-    cityG
+    // 1. Drop Shadow Circle for Avatar Pin
+    userMarkerG
       .append('circle')
-      .attr('r', 12.5)
-      .attr('cy', 2.5)
-      .attr('fill', 'rgba(17, 28, 52, 0.20)');
+      .attr('r', 16)
+      .attr('cy', 3)
+      .attr('fill', 'rgba(17, 28, 52, 0.22)');
 
-    // 2. Avatar Outer Halo Ring
-    cityG
+    // 2. Real Person Photo Image (Clipped to Circle)
+    userMarkerG
+      .append('image')
+      .attr('href', (d) => d.avatarUrl)
+      .attr('x', -14)
+      .attr('y', -14)
+      .attr('width', 28)
+      .attr('height', 28)
+      .attr('preserveAspectRatio', 'xMidYMid slice')
+      .attr('clip-path', (d) => `url(#photo-clip-${d.id})`);
+
+    // 3. Colored Brand Outer Ring Halo
+    userMarkerG
       .append('circle')
-      .attr('r', 12)
-      .attr('fill', '#ffffff')
+      .attr('r', 15.5)
+      .attr('fill', 'none')
       .attr('stroke', (d) => d.ringColor)
-      .attr('stroke-width', 2);
+      .attr('stroke-width', 2.5);
 
-    // 3. Avatar Face Content Container (Clipped to Circle)
-    const avatarContent = cityG
-      .append('g')
-      .attr('clip-path', (d) => `url(#clip-user-${d.id})`);
-
-    // Avatar Background Tint
-    avatarContent
+    // 4. WhatsApp Online Green Signal Badge on Avatar
+    userMarkerG
       .append('circle')
-      .attr('r', 10.5)
-      .attr('fill', '#F4F8FD');
-
-    // Shirt / Body Silhouette
-    avatarContent
-      .append('path')
-      .attr('d', 'M -9 11 C -9 5, 9 5, 9 11 Z')
-      .attr('fill', (d) => d.shirt);
-
-    // Neck / Head Circle
-    avatarContent
-      .append('circle')
-      .attr('cx', 0)
-      .attr('cy', -1.5)
-      .attr('r', 4.6)
-      .attr('fill', (d) => d.skin);
-
-    // Hair Styles
-    avatarContent.each(function (d) {
-      const g = d3.select(this);
-      if (d.hairStyle === 'short') {
-        g.append('path')
-          .attr('d', 'M -4.8 -2.5 C -4.8 -6.8, 4.8 -6.8, 4.8 -2.5 C 4.8 -1.2, -4.8 -1.2, -4.8 -2.5 Z')
-          .attr('fill', d.hair);
-      } else if (d.hairStyle === 'bob') {
-        g.append('path')
-          .attr('d', 'M -5.2 -1.5 C -5.5 -6.8, 5.5 -6.8, 5.2 -1.5 C 5.5 2.5, 3.8 3, 3.8 0.5 C 2 -5, -2 -5, -3.8 0.5 C -3.8 3, -5.5 2.5, -5.2 -1.5 Z')
-          .attr('fill', d.hair);
-      } else if (d.hairStyle === 'curly') {
-        g.append('circle').attr('cx', -3.8).attr('cy', -3.5).attr('r', 2.6).attr('fill', d.hair);
-        g.append('circle').attr('cx', 0).attr('cy', -6).attr('r', 3).attr('fill', d.hair);
-        g.append('circle').attr('cx', 3.8).attr('cy', -3.5).attr('r', 2.6).attr('fill', d.hair);
-      } else if (d.hairStyle === 'ponytail') {
-        g.append('circle').attr('cx', 0).attr('cy', -4).attr('r', 4.6).attr('fill', d.hair);
-        g.append('circle').attr('cx', -4.8).attr('cy', -2).attr('r', 2.2).attr('fill', d.hair);
-      } else if (d.hairStyle === 'bun') {
-        g.append('circle').attr('cx', 0).attr('cy', -3.8).attr('r', 4.6).attr('fill', d.hair);
-        g.append('circle').attr('cx', 0).attr('cy', -8).attr('r', 2.6).attr('fill', d.hair);
-      } else {
-        g.append('path')
-          .attr('d', 'M -4.8 -2 C -4.8 -6.8, 5.8 -5.8, 4.8 -1 C 4.8 -4.8, -2.8 -4.8, -4.8 -2 Z')
-          .attr('fill', d.hair);
-      }
-
-      // Glasses (if user wears glasses)
-      if (d.glasses) {
-        g.append('path')
-          .attr('d', 'M -3.8 -2.2 h 2.6 M 1.2 -2.2 h 2.6 M -1.2 -2.2 h 2.4')
-          .attr('stroke', '#111C34')
-          .attr('stroke-width', 0.85)
-          .attr('fill', 'none');
-      }
-
-      // Eyes
-      g.append('circle').attr('cx', -1.6).attr('cy', -1.5).attr('r', 0.65).attr('fill', '#111C34');
-      g.append('circle').attr('cx', 1.6).attr('cy', -1.5).attr('r', 0.65).attr('fill', '#111C34');
-
-      // Smile
-      g.append('path')
-        .attr('d', 'M -1.8 0.9 Q 0 2.2 1.8 0.9')
-        .attr('stroke', '#5A2A18')
-        .attr('stroke-width', 0.6)
-        .attr('fill', 'none')
-        .attr('stroke-linecap', 'round');
-    });
-
-    // 4. WhatsApp Active Green Online Signal Pill
-    cityG
-      .append('circle')
-      .attr('cx', 8)
-      .attr('cy', 8)
-      .attr('r', 3.2)
+      .attr('cx', 10.5)
+      .attr('cy', 10.5)
+      .attr('r', 4)
       .attr('fill', '#25D366')
       .attr('stroke', '#ffffff')
-      .attr('stroke-width', 1.2);
+      .attr('stroke-width', 1.6);
 
-    // 5. Name & City Floating Tag Pill
-    const tag = cityG
+    // 5. Message Style Card
+    const msgCard = userMarkerG
       .append('g')
-      .attr('transform', 'translate(0, -17)');
+      .attr('class', 'message-card')
+      .attr('transform', (d) => `translate(${d.cardOffset.x}, ${d.cardOffset.y})`)
+      .attr('filter', 'url(#card-drop-shadow)');
 
-    tag
+    // Card White Background Container
+    msgCard
       .append('rect')
-      .attr('x', -26)
-      .attr('y', -8)
-      .attr('width', 52)
-      .attr('height', 13)
-      .attr('rx', 6.5)
-      .attr('fill', '#111C34')
-      .attr('opacity', 0.9);
-
-    tag
-      .append('text')
       .attr('x', 0)
-      .attr('y', 1.5)
-      .attr('text-anchor', 'middle')
+      .attr('y', 0)
+      .attr('width', 178)
+      .attr('height', 48)
+      .attr('rx', 12)
       .attr('fill', '#ffffff')
-      .attr('font-size', '7.2')
-      .attr('font-weight', '700')
-      .text((d) => d.city);
+      .attr('stroke', 'rgba(17, 28, 52, 0.10)')
+      .attr('stroke-width', 1);
+
+    // Top Accent Border Line on Card (Clipped to 12px rounded card boundary)
+    msgCard
+      .append('rect')
+      .attr('x', 0)
+      .attr('y', 0)
+      .attr('width', 178)
+      .attr('height', 3.5)
+      .attr('fill', (d) => d.ringColor)
+      .attr('clip-path', (d) => `url(#card-clip-${d.id})`);
+
+    // Card Header Row: Green Online Dot
+    msgCard
+      .append('circle')
+      .attr('cx', 12)
+      .attr('cy', 17)
+      .attr('r', 3)
+      .attr('fill', '#25D366');
+
+    // Card Header Row: Person Name
+    msgCard
+      .append('text')
+      .attr('x', 20)
+      .attr('y', 20.5)
+      .attr('fill', '#111C34')
+      .attr('font-size', '10.5')
+      .attr('font-weight', '800')
+      .attr('font-family', 'var(--font-outfit), sans-serif')
+      .text((d) => d.name);
+
+    // Card Header Row: Status Tag Pill Background
+    msgCard
+      .append('rect')
+      .attr('x', 114)
+      .attr('y', 10)
+      .attr('width', 54)
+      .attr('height', 14)
+      .attr('rx', 7)
+      .attr('fill', (d) => `${d.tagColor}18`);
+
+    // Card Header Row: Status Tag Pill Text
+    msgCard
+      .append('text')
+      .attr('x', 141)
+      .attr('y', 20)
+      .attr('text-anchor', 'middle')
+      .attr('fill', (d) => d.tagColor)
+      .attr('font-size', '7.5')
+      .attr('font-weight', '800')
+      .attr('font-family', 'var(--font-outfit), sans-serif')
+      .text((d) => d.statusTag);
+
+    // Card Body Row: Business Operations Message Text
+    msgCard
+      .append('text')
+      .attr('x', 10)
+      .attr('y', 36.5)
+      .attr('fill', '#4A5568')
+      .attr('font-size', '8.5')
+      .attr('font-weight', '600')
+      .attr('font-family', 'var(--font-jakarta), sans-serif')
+      .text((d) => d.message);
 
     // Arc interpolator
     const arc = (a: [number, number], b: [number, number]) => {
@@ -463,7 +477,7 @@ export const GlobeCanvas: React.FC<GlobeCanvasProps> = ({ size = 480 }) => {
           .attr('stroke-dashoffset', -dash);
       });
 
-      cityG.each(function (d) {
+      userMarkerG.each(function (d) {
         const p = proj(d.coords);
         const front = c && d3.geoDistance(c, d.coords) < Math.PI / 2.15;
         d3.select(this)
@@ -488,7 +502,7 @@ export const GlobeCanvas: React.FC<GlobeCanvasProps> = ({ size = 480 }) => {
   }, [size]);
 
   return (
-    <div className="w-full flex items-center justify-center p-2">
+    <div className="w-full flex items-center justify-center p-2 overflow-visible">
       <svg
         ref={svgRef}
         width={size}

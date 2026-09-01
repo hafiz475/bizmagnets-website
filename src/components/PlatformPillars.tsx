@@ -63,20 +63,20 @@ export const PlatformPillars: React.FC = () => {
   const [selectedPillar, setSelectedPillar] = useState<(typeof PILLARS)[0] | null>(null);
 
   return (
-    <section id="platform" className="relative bg-gradient-to-b from-white to-[#F5F9FF] overflow-hidden py-16 lg:py-24">
+    <section id="platform" className="relative bg-gradient-to-b from-white to-[#F5F9FF] dark:from-[#0A0F1E] dark:to-[#0D1730] overflow-hidden py-16 lg:py-24">
       {/* 12-Icon Multi-Communication Animated Background */}
       <BizPatternBackground opacity={0.16} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-xs font-bold tracking-widest text-[#1A73E8] mb-3">
+        <div className="text-xs font-bold tracking-widest text-[#1A73E8] dark:text-[#4C9AFF] mb-3">
           THE PLATFORM
         </div>
 
-        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#111C34] mb-4">
+        <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#111C34] dark:text-[#EDF1FA] mb-4">
           From conversation to completion.
         </h2>
 
-        <p className="text-base sm:text-lg text-[#5C6B85] max-w-xl mb-12">
+        <p className="text-base sm:text-lg text-[#5C6B85] dark:text-[#93A1BE] max-w-xl mb-12">
           Six things your business does every day. All of them, in the app your customers never had to download.
         </p>
 
@@ -97,19 +97,19 @@ export const PlatformPillars: React.FC = () => {
                   <IconComp className="w-7 h-7" style={{ color: p.color }} />
                 </div>
 
-                <h3 className="font-display text-xl font-extrabold text-[#111C34] mb-2">
+                <h3 className="font-display text-xl font-extrabold text-[#111C34] dark:text-[#EDF1FA] mb-2">
                   {p.name}
                 </h3>
 
-                <p className="text-sm font-semibold text-[#111C34] mb-2 leading-snug">
+                <p className="text-sm font-semibold text-[#111C34] dark:text-[#EDF1FA] mb-2 leading-snug">
                   {p.promise}
                 </p>
 
-                <p className="text-xs text-[#5C6B85] leading-relaxed mb-4">
+                <p className="text-xs text-[#5C6B85] dark:text-[#93A1BE] leading-relaxed mb-4">
                   {p.detail}
                 </p>
 
-                <div className="flex items-center gap-1.5 text-xs font-bold text-[#1A73E8] group-hover:translate-x-1 transition-transform">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-[#1A73E8] dark:text-[#4C9AFF] group-hover:translate-x-1 transition-transform">
                   Explore features <ArrowRight className="w-3.5 h-3.5" />
                 </div>
               </div>
@@ -120,8 +120,8 @@ export const PlatformPillars: React.FC = () => {
 
       {/* Feature Details Modal */}
       {selectedPillar && (
-        <div className="fixed inset-0 z-50 bg-[#111C34]/60 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl relative animate-bm-in">
+        <div className="fixed inset-0 z-50 bg-[#111C34]/60 dark:bg-black/70 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="bg-white dark:bg-[#0F1729] rounded-3xl p-6 sm:p-8 max-w-lg w-full shadow-2xl relative animate-bm-in">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
                 <div
@@ -134,7 +134,7 @@ export const PlatformPillars: React.FC = () => {
                   })}
                 </div>
                 <div>
-                  <h3 className="font-display text-2xl font-bold text-[#111C34]">
+                  <h3 className="font-display text-2xl font-bold text-[#111C34] dark:text-[#EDF1FA]">
                     {selectedPillar.name}
                   </h3>
                   <span className="text-xs font-bold" style={{ color: selectedPillar.color }}>
@@ -145,26 +145,26 @@ export const PlatformPillars: React.FC = () => {
 
               <button
                 onClick={() => setSelectedPillar(null)}
-                className="w-9 h-9 rounded-full bg-[#111C34]/5 flex items-center justify-center text-[#111C34] hover:bg-[#111C34]/10 transition-colors"
+                className="w-9 h-9 rounded-full bg-[#111C34]/5 dark:bg-white/10 flex items-center justify-center text-[#111C34] dark:text-[#EDF1FA] hover:bg-[#111C34]/10 dark:hover:bg-white/20 transition-colors"
               >
                 ✕
               </button>
             </div>
 
-            <p className="text-sm font-semibold text-[#111C34] mb-3">
+            <p className="text-sm font-semibold text-[#111C34] dark:text-[#EDF1FA] mb-3">
               {selectedPillar.promise}
             </p>
 
-            <p className="text-xs text-[#5C6B85] mb-6 leading-relaxed">
+            <p className="text-xs text-[#5C6B85] dark:text-[#93A1BE] mb-6 leading-relaxed">
               {selectedPillar.detail}
             </p>
 
             <div className="space-y-2.5 mb-8">
-              <div className="text-xs font-bold text-[#111C34] tracking-wider uppercase mb-2">
+              <div className="text-xs font-bold text-[#111C34] dark:text-[#EDF1FA] tracking-wider uppercase mb-2">
                 Included Capabilities
               </div>
               {selectedPillar.features.map((feat, idx) => (
-                <div key={idx} className="flex items-center gap-3 text-sm text-[#111C34]">
+                <div key={idx} className="flex items-center gap-3 text-sm text-[#111C34] dark:text-[#EDF1FA]">
                   <div
                     className="w-5 h-5 rounded-full flex items-center justify-center"
                     style={{ backgroundColor: `${selectedPillar.color}20` }}

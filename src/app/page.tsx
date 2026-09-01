@@ -29,7 +29,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#111C34] font-sans selection:bg-[#1A73E8]/20">
+    <div className="min-h-screen bg-white dark:bg-[#0A0F1E] text-[#111C34] dark:text-[#EDF1FA] font-sans selection:bg-[#1A73E8]/20 transition-colors duration-300">
       {/* Navigation — fixed overlay */}
       <Navbar onOpenDemo={handleOpenDemo} onOpenTrial={handleOpenTrial} />
 

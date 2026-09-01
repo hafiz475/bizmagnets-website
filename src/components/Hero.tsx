@@ -97,7 +97,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
         {/* Left Column - Copy & Value Proposition */}
         <div className="lg:col-span-7">
           {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/75 border border-white/90 backdrop-blur-md shadow-sm text-xs font-extrabold tracking-widest text-[#111C34] mb-6">
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/75 dark:bg-white/5 border border-white/90 dark:border-white/10 backdrop-blur-md shadow-sm text-xs font-extrabold tracking-widest text-[#111C34] dark:text-[#EDF1FA] mb-6">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366" className="block">
               <path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9c0 1.75.46 3.46 1.34 4.97L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.44 9.9-9.9A9.86 9.86 0 0 0 12.04 2Zm5.8 14.05c-.24.68-1.42 1.32-1.96 1.36-.5.04-.98.22-3.3-.69-2.77-1.09-4.54-3.9-4.68-4.08-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.25-.27.55-.34.73-.34h.53c.17 0 .4-.6.62.48.24.57.8 1.98.87 2.12.07.14.12.31.02.5-.1.18-.15.29-.29.45l-.44.51c-.14.14-.29.3-.12.58.16.29.73 1.2 1.56 1.94 1.07.95 1.98 1.25 2.26 1.39.28.14.44.12.61-.07.17-.2.7-.82.89-1.1.19-.28.37-.23.62-.14.25.09 1.6.76 1.87.9.28.14.46.21.53.32.07.11.07.65-.17 1.33Z" />
             </svg>
@@ -110,16 +110,16 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
             WHATSAPP-FIRST BUSINESS OPERATIONS
           </div>
 
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight text-[#111C34] mb-6">
-            WhatsApp is where work <span className="text-[#12A150]">starts</span>.<br />
-            Make sure it gets <span className="text-[#1A73E8]">finished</span>.
+          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight text-[#111C34] dark:text-[#EDF1FA] mb-6">
+            WhatsApp is where work <span className="text-[#12A150] dark:text-[#3DDC8A]">starts</span>.<br />
+            Make sure it gets <span className="text-[#1A73E8] dark:text-[#4C9AFF]">finished</span>.
           </h1>
 
-          <p className="text-base sm:text-lg text-[#5C6B85] max-w-xl mb-4 leading-relaxed">
+          <p className="text-base sm:text-lg text-[#5C6B85] dark:text-[#93A1BE] max-w-xl mb-4 leading-relaxed">
             Customers message. Teams reply. Then somebody, somewhere, promises to &ldquo;check and revert.&rdquo; That&rsquo;s where most businesses lose the plot.
           </p>
 
-          <p className="text-base sm:text-lg text-[#111C34] font-semibold max-w-xl mb-8 leading-relaxed">
+          <p className="text-base sm:text-lg text-[#111C34] dark:text-[#EDF1FA] font-semibold max-w-xl mb-8 leading-relaxed">
             BizMagnets turns every chat into trackable work — with an owner, a deadline and a receipt.
           </p>
 
@@ -133,7 +133,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
             </button>
             <button
               onClick={onOpenDemo}
-              className="inline-flex items-center text-[#111C34] font-display font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-full border-2 border-[#111C34] hover:bg-[#111C34] hover:text-white transition-all"
+              className="inline-flex items-center text-[#111C34] dark:text-[#EDF1FA] font-display font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-full border-2 border-[#111C34] dark:border-white hover:bg-[#111C34] dark:hover:bg-white hover:text-white dark:hover:text-[#111C34] transition-all"
             >
               Book a Demo
             </button>
@@ -147,7 +147,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
               return (
                 <span
                   key={idx}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 border border-[#111C34]/10 backdrop-blur-sm text-xs font-bold text-[#111C34] shadow-sm"
+                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 dark:bg-white/5 border border-[#111C34]/10 dark:border-white/10 backdrop-blur-sm text-xs font-bold text-[#111C34] shadow-sm"
                   style={{ borderColor: `${color}40`, color: color }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: color }} />
@@ -162,28 +162,28 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
         <div className="lg:col-span-5">
           <div className="glass-panel p-6 sm:p-7 rounded-3xl relative">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-[11px] font-bold tracking-widest text-[#5C6B85]">
+              <span className="text-[11px] font-bold tracking-widest text-[#5C6B85] dark:text-[#93A1BE]">
                 FROM CONVERSATION TO COMPLETION
               </span>
-              <span className="flex items-center gap-1.5 text-xs font-bold text-[#12A150]">
+              <span className="flex items-center gap-1.5 text-xs font-bold text-[#12A150] dark:text-[#3DDC8A]">
                 <span className="w-2 h-2 rounded-full bg-[#12A150] animate-bm-pulse" />
                 LIVE
               </span>
             </div>
 
             {/* Inbound Customer Message */}
-            <div className="bg-white rounded-2xl rounded-tl-sm p-3.5 flex gap-3 items-start shadow-md mb-4 max-w-[92%]">
+            <div className="bg-white dark:bg-white/10 rounded-2xl rounded-tl-sm p-3.5 flex gap-3 items-start shadow-md mb-4 max-w-[92%]">
               <span className="w-8 h-8 rounded-full bg-[#25D366] flex-shrink-0 flex items-center justify-center text-white">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9c0 1.75.46 3.46 1.34 4.97L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.44 9.9-9.9A9.86 9.86 0 0 0 12.04 2Zm5.8 14.05c-.24.68-1.42 1.32-1.96 1.36-.5.04-.98.22-3.3-.69-2.77-1.09-4.54-3.9-4.68-4.08-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.25-.27.55-.34.73-.34h.53c.17 0 .4-.6.62.48.24.57.8 1.98.87 2.12.07.14.12.31.02.5-.1.18-.15.29-.29.45l-.44.51c-.14.14-.29.3-.12.58.16.29.73 1.2 1.56 1.94 1.07.95 1.98 1.25 2.26 1.39.28.14.44.12.61-.07.17-.2.7-.82.89-1.1.19-.28.37-.23.62-.14.25.09 1.6.76 1.87.9.28.14.46.21.53.32.07.11.07.65-.17 1.33Z" />
                 </svg>
               </span>
               <div>
-                <div className="text-xs font-bold text-[#12A150] mb-0.5">Priya R.</div>
-                <div className="text-sm font-medium text-[#111C34]">
+                <div className="text-xs font-bold text-[#12A150] dark:text-[#3DDC8A] mb-0.5">Priya R.</div>
+                <div className="text-sm font-medium text-[#111C34] dark:text-[#EDF1FA]">
                   Hi! Can I see Dr. Menon sometime this week? 😊
                 </div>
-                <div className="text-[10px] text-[#8794A8] text-right mt-1">10:04</div>
+                <div className="text-[10px] text-[#8794A8] dark:text-white/40 text-right mt-1">10:04</div>
               </div>
             </div>
 
@@ -199,7 +199,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
                       isActive ? 'opacity-100 translate-y-0' : 'opacity-40 translate-y-2'
                     }`}
                   >
-                    <div className="max-w-[90%] bg-[#E7FFDB] rounded-2xl rounded-tr-sm p-3 shadow-md border border-[#12A150]/20">
+                    <div className="max-w-[90%] bg-[#E7FFDB] dark:bg-[#12271D] rounded-2xl rounded-tr-sm p-3 shadow-md border border-[#12A150]/20 dark:border-[#3DDC8A]/20">
                       <div className="flex items-center gap-2.5">
                         <span
                           className="w-6 h-6 rounded-lg flex-shrink-0 flex items-center justify-center"
@@ -207,7 +207,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
                         >
                           <IconComponent className="w-3.5 h-3.5" style={{ color: step.color }} />
                         </span>
-                        <span className="text-sm font-semibold text-[#111C34]">{step.label}</span>
+                        <span className="text-sm font-semibold text-[#111C34] dark:text-[#EDF1FA]">{step.label}</span>
                       </div>
                       <div className="flex items-center justify-between gap-4 mt-2">
                         <span
@@ -216,7 +216,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
                         >
                           {step.meta}
                         </span>
-                        <span className="text-[10px] text-[#8794A8] flex items-center gap-1">
+                        <span className="text-[10px] text-[#8794A8] dark:text-white/40 flex items-center gap-1">
                           {step.time}
                           <svg width="15" height="10" viewBox="0 0 16 11" fill="none">
                             <path d="M1 5.6 4.1 8.7 9.4 2.3" stroke="#34B7F1" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
