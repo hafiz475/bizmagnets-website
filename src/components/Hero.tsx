@@ -39,7 +39,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
   }, []);
 
   return (
-    <section id="top" className="relative overflow-hidden pt-8 pb-16 lg:pb-24">
+    <section id="top" className="relative overflow-hidden pt-24 pb-16 lg:pb-24">
       {/* Background Decorative Gradient Blobs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 left-0 right-0 h-[220px] bg-gradient-to-b from-[#12A150]/15 to-transparent" />
@@ -137,7 +137,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
               <div>
                 <div className="text-xs font-bold text-[#12A150] mb-0.5">Priya R.</div>
                 <div className="text-sm font-medium text-[#111C34]">
-                  Hi! Can I see Dr. Menon sometime this week? 🙏
+                  Hi! Can I see Dr. Menon sometime this week? 😊
                 </div>
                 <div className="text-[10px] text-[#8794A8] text-right mt-1">10:04</div>
               </div>

@@ -29,12 +29,12 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#111C34] flex flex-col font-sans selection:bg-[#1A73E8]/20">
-      {/* Navigation */}
+    <div className="min-h-screen bg-white text-[#111C34] font-sans selection:bg-[#1A73E8]/20">
+      {/* Navigation — fixed overlay */}
       <Navbar onOpenDemo={handleOpenDemo} onOpenTrial={handleOpenTrial} />
 
       {/* Main SEO Semantic Sections */}
-      <main className="flex-grow">
+      <main>
         <Hero onOpenDemo={handleOpenDemo} onOpenTrial={handleOpenTrial} />
         <StatsBar onOpenStory={handleOpenDemo} />
         <ProblemSolution />

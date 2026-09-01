@@ -1,8 +1,8 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Image from 'next/image';
-import { Menu, X, ArrowRight, Sparkles } from 'lucide-react';
+import { X, ArrowRight, Sparkles } from 'lucide-react';
 
 interface NavbarProps {
   onOpenDemo: () => void;
@@ -22,33 +22,56 @@ export const MENU_ITEMS = [
 
 export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenTrial }) => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const progressRef = useRef<HTMLDivElement>(null);
+  const rafRef = useRef<number>(0);
 
+  // Direct DOM manipulation for buttery-smooth 60fps scroll progress
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+    const updateProgress = () => {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0;
+      // Minimum 6% so the bar is always visible as a small accent
+      const width = Math.max(6, progress);
+
+      if (progressRef.current) {
+        progressRef.current.style.width = `${width}%`;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const onScroll = () => {
+      // Cancel previous frame to avoid stacking
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(updateProgress);
+    };
+
+    // Set initial state
+    updateProgress();
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
 
   return (
     <>
-      <header className="sticky top-0 z-50 px-3 sm:px-6 pt-3 pb-2 flex justify-center pointer-events-none transition-all duration-300">
+      <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 pt-3 pb-2 flex justify-center pointer-events-none transition-all duration-300">
         <div className="pointer-events-auto w-full max-w-6xl">
           <div className="flex items-center gap-2 sm:gap-5 glass-nav rounded-full p-2 transition-all shadow-lg hover:shadow-xl">
-            {/* Logo Mark */}
+            {/* Logo — New BizMagnets v4 Lockup */}
             <a
               href="#top"
-              className="w-11 h-11 flex-shrink-0 rounded-full bg-white shadow-md flex items-center justify-center transition-transform hover:-rotate-12"
+              className="flex-shrink-0 flex items-center pl-2 transition-transform hover:scale-[1.02]"
               aria-label="BizMagnets Home"
             >
               <Image
-                src="/assets/logo-mark.png"
-                alt="BizMagnets Logo"
-                width={28}
-                height={28}
-                className="w-7 h-auto"
+                src="/assets/Biz_logo_version4.png"
+                alt="BizMagnets"
+                width={140}
+                height={32}
+                className="h-7 sm:h-8 w-auto"
                 priority
               />
             </a>
@@ -118,20 +141,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenTrial }) => {
               >
                 <span className="w-full h-full rounded-full bg-white flex items-center justify-center">
                   <Image
-                    src="/assets/logo-mark.png"
+                    src="/assets/Biz_logo_version4.png"
                     alt=""
-                    width={20}
-                    height={20}
-                    className="w-5 h-auto"
+                    width={24}
+                    height={24}
+                    className="h-5 w-auto"
                   />
                 </span>
               </button>
             </div>
           </div>
 
-          {/* Color accent line */}
-          <div className="flex justify-end px-6 mt-1">
-            <div className="w-[23%] min-w-[140px] h-[3px] rounded-full bg-gradient-to-r from-[#1A73E8] via-[#EA3323] via-[#F9AB00] to-[#12A150]" />
+          {/* Scroll-progress accent — direct DOM for 60fps, starts left, fills full width at page bottom */}
+          <div className="flex justify-start px-6 mt-1">
+            <div
+              ref={progressRef}
+              className="h-[3px] rounded-full"
+              style={{
+                width: '6%',
+                background: 'linear-gradient(90deg, #1A73E8, #EA3323, #F9AB00, #12A150)',
+                willChange: 'width',
+              }}
+            />
           </div>
         </div>
       </header>
@@ -142,7 +173,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenTrial }) => {
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-between mb-8">
               <Image
-                src="/assets/logo-lockup.png"
+                src="/assets/Biz_logo_version4.png"
                 alt="BizMagnets Logo"
                 width={180}
                 height={38}
