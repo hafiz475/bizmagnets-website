@@ -10,6 +10,23 @@ interface CaseStudyProps {
 export const CaseStudySection: React.FC<CaseStudyProps> = ({ onOpenDemo }) => {
   return (
     <section id="athulya" className="relative overflow-hidden py-16 lg:py-24">
+      {/* Background Animated SVG Accents */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.16]">
+        <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" className="w-full h-full">
+          <g fill="none" stroke="#12A150" strokeWidth="4" strokeLinecap="round" className="animate-bm-drift">
+            <path d="M120 140 l20 22 44 -50" />
+            <path d="M420 100 l20 22 44 -50" />
+            <path d="M760 200 l20 22 44 -50" />
+            <path d="M980 460 l20 22 44 -50" />
+            <path d="M240 520 l20 22 44 -50" />
+            <rect x="520" y="330" width="190" height="104" rx="28" />
+            <path d="M548 434 L548 462 L578 434" />
+            <circle cx="900" cy="90" r="30" />
+            <path d="M888 90 l10 12 22 -26" />
+          </g>
+        </svg>
+      </div>
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-xs font-bold tracking-widest text-[#F9AB00] mb-3">
           CUSTOMER STORY · HEALTHCARE

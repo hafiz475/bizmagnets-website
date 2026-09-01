@@ -17,6 +17,26 @@ const SYSTEMS = [
 export const Integrations: React.FC = () => {
   return (
     <section id="resources" className="relative overflow-hidden py-16 lg:py-24">
+      {/* Background Animated SVG Accents */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.16]">
+        <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" className="w-full h-full">
+          <g fill="none" stroke="#12A150" strokeWidth="4" strokeLinecap="round" className="animate-bm-drift">
+            <circle cx="180" cy="140" r="34" />
+            <circle cx="520" cy="90" r="26" />
+            <circle cx="900" cy="180" r="30" />
+            <circle cx="360" cy="520" r="28" />
+            <circle cx="820" cy="560" r="34" />
+            <path d="M214 140 h280" />
+            <path d="M546 100 l330 70" />
+            <path d="M200 174 l150 330" />
+            <path d="M390 520 h400" />
+            <rect x="600" y="300" width="180" height="100" rx="26" />
+            <path d="M628 400 L628 428 L656 400" />
+            <path d="M640 348 l16 18 36 -40" />
+          </g>
+        </svg>
+      </div>
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#111C34] max-w-3xl mx-auto mb-4 text-balance">
           Your systems stay. <span className="text-[#1A73E8]">BizMagnets connects the gaps.</span>

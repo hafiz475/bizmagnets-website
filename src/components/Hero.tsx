@@ -47,6 +47,37 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
         <div className="absolute -top-20 left-[40%] w-[380px] h-[380px] rounded-full bg-radial from-[#25D366]/30 to-transparent animate-bm-float" />
         <div className="absolute -top-14 right-[14%] w-[300px] h-[300px] rounded-full bg-radial from-[#F9AB00]/24 to-transparent animate-bm-float" />
         <div className="absolute top-32 -right-24 w-[420px] h-[420px] rounded-full bg-radial from-[#12A150]/20 to-transparent animate-bm-float" />
+        
+        {/* Animated Light-Themed Green SVG Message Icons Background */}
+        <svg
+          viewBox="0 0 1200 700"
+          preserveAspectRatio="xMidYMid slice"
+          className="absolute inset-0 w-full h-full opacity-[0.22] pointer-events-none"
+        >
+          <g fill="none" stroke="#12A150" strokeWidth="3.5" className="animate-bm-drift">
+            <rect x="60" y="30" width="150" height="86" rx="22" />
+            <path d="M84 116 L84 142 L110 116" />
+            <rect x="430" y="16" width="176" height="96" rx="24" />
+            <path d="M580 112 L580 140 L554 112" />
+            <circle cx="470" cy="64" r="7" />
+            <circle cx="506" cy="64" r="7" />
+            <circle cx="542" cy="64" r="7" />
+            <path d="M700 70 l150 -52 -56 142 -24 -62z" />
+            <rect x="900" y="24" width="150" height="86" rx="22" />
+            <path d="M1034 110 L1034 136 L1010 110" />
+            <rect x="330" y="320" width="180" height="98" rx="24" />
+            <path d="M356 418 L356 446 L384 418" />
+            <rect x="760" y="120" width="164" height="92" rx="22" />
+            <path d="M900 212 L900 240 L874 212" />
+            <rect x="980" y="430" width="150" height="86" rx="22" />
+            <path d="M1114 516 L1114 542 L1090 516" />
+            <rect x="180" y="480" width="132" height="78" rx="20" />
+            <path d="M204 558 L204 582 L228 558" />
+            <path d="M110 130 l14 16 30 -34" strokeLinecap="round" />
+            <path d="M382 366 l16 18 34 -38" strokeLinecap="round" />
+            <path d="M806 166 l14 16 30 -34" strokeLinecap="round" />
+          </g>
+        </svg>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

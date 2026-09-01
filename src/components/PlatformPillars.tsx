@@ -65,6 +65,24 @@ export const PlatformPillars: React.FC = () => {
 
   return (
     <section id="platform" className="relative bg-gradient-to-b from-white to-[#F5F9FF] overflow-hidden py-16 lg:py-24">
+      {/* Background Animated SVG Accents */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.16]">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" className="w-full h-full">
+          <g fill="none" stroke="#12A150" strokeWidth="4" className="animate-bm-drift">
+            <rect x="90" y="120" width="170" height="94" rx="24" />
+            <path d="M116 214 L116 242 L144 214" />
+            <rect x="520" y="60" width="140" height="82" rx="22" />
+            <path d="M640 142 L640 168 L616 142" />
+            <rect x="880" y="300" width="176" height="96" rx="24" />
+            <path d="M906 396 L906 424 L934 396" />
+            <rect x="250" y="560" width="150" height="86" rx="22" />
+            <path d="M276 646 L276 672 L302 646" />
+            <path d="M140 166 l16 18 34 -38" strokeLinecap="round" />
+            <path d="M930 348 l16 18 34 -38" strokeLinecap="round" />
+          </g>
+        </svg>
+      </div>
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-xs font-bold tracking-widest text-[#1A73E8] mb-3">
           THE PLATFORM
