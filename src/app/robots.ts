@@ -10,4 +10,4 @@ export default function robots(): MetadataRoute.Robots {
     },
     sitemap: 'https://bizmagnets.ai/sitemap.xml',
   };
-}
+} 
