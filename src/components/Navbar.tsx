@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import {
   X,
+  ArrowRight,
   Sparkles,
   Sun,
   Moon,
@@ -15,7 +16,7 @@ import {
   BookOpen,
   Globe2,
   Code2,
-  LogIn,
+  User,
   Calendar,
 } from 'lucide-react';
 import { useTheme } from './ThemeProvider';
@@ -168,10 +169,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenTrial }) => {
               >
                 <span className="flex items-center rounded-full dark:bg-white/95 dark:px-3 dark:py-1.5 transition-colors">
                   <Image
-                    src="/assets/Biz_logo_version4.png"
+                    src="/assets/bizlogov4-cropped.png"
                     alt="BizMagnets"
-                    width={200}
-                    height={46}
+                    width={735}
+                    height={197}
                     className="h-10 sm:h-12 w-auto"
                     priority
                   />
@@ -181,20 +182,22 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenTrial }) => {
               <span className="flex-1" />
 
               {/* Actions */}
-              <div className="flex items-center gap-2 sm:gap-3">
+              <div className="flex items-center gap-2 sm:gap-2.5">
+                {/* Login */}
                 <button
                   onClick={onOpenDemo}
-                  className="hidden lg:inline-flex items-center gap-1.5 text-[#5C6B85] dark:text-[#93A1BE] font-display text-base font-bold hover:text-[#111C34] dark:hover:text-[#EDF1FA] px-2 py-1 transition-colors group"
+                  aria-label="Login"
+                  className="hidden lg:inline-flex items-center gap-1.5 text-[#5C6B85] dark:text-[#93A1BE] hover:text-[#111C34] dark:hover:text-[#EDF1FA] hover:bg-[#111C34]/5 dark:hover:bg-white/10 px-3 py-2 rounded-xl text-sm font-semibold transition-colors"
                 >
-                  <LogIn className="w-4 h-4 animate-bm-login-slide group-hover:text-[#25D366] transition-colors" />
-                  Login
+                  <User className="w-4 h-4" />
+                  <span>Login</span>
                 </button>
                 <button
                   onClick={onOpenDemo}
-                  className="hidden sm:inline-flex items-center gap-1.5 bg-[#12A150] dark:bg-[#3DDC8A] text-white dark:text-[#0A0F1E] font-display text-base font-bold px-5 py-2.5 rounded-full shadow-md shadow-[#12A150]/25 hover:bg-[#0F8A44] dark:hover:bg-[#2ECC81] transition-all"
+                  className="hidden sm:inline-flex items-center gap-2 text-[#111C34] dark:text-[#EDF1FA] text-sm font-semibold px-4 py-2 rounded-xl border border-[#111C34]/15 dark:border-white/20 hover:bg-[#111C34]/5 dark:hover:bg-white/10 transition-all"
                 >
-                  <Calendar className="w-4 h-4 animate-bm-calendar-pulse" />
-                  Book a Demo
+                  <Calendar className="w-4 h-4 text-[#1A73E8] animate-bm-blink" />
+                  <span>Book a Demo</span>
                 </button>
               </div>
             </div>
@@ -214,46 +217,51 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenTrial }) => {
             </button>
           </div>
 
-          {/* Scroll-progress accent — direct DOM for 60fps, starts left, fills full width at page bottom */}
-          <div className="flex justify-start px-6 mt-1">
-            <div
-              ref={progressRef}
-              className="h-[3px] rounded-full"
-              style={{
-                width: '6%',
-                background: 'linear-gradient(90deg, #1A73E8, #EA3323, #F9AB00, #12A150)',
-                willChange: 'width',
-              }}
-            />
+          {/* Scroll-progress accent — mirrors the hamburger/pill/theme-toggle row
+              so it starts under the glass pill, not the hamburger button */}
+          <div className="flex items-center gap-2 sm:gap-3 mt-1">
+            <span className="w-11 flex-shrink-0" aria-hidden="true" />
+            <div className="flex-1 min-w-0 px-6">
+              <div
+                ref={progressRef}
+                className="h-[3px] rounded-full"
+                style={{
+                  width: '6%',
+                  background: 'linear-gradient(90deg, #1A73E8, #EA3323, #F9AB00, #12A150)',
+                  willChange: 'width',
+                }}
+              />
+            </div>
+            <span className="w-11 flex-shrink-0" aria-hidden="true" />
           </div>
         </div>
       </header>
 
       {/* Fullscreen Responsive Menu Drawer */}
       {menuOpen && (
-        <div className="fixed inset-0 z-50 bg-[#E9F2FF]/80 dark:bg-[#060A14]/92 backdrop-blur-2xl overflow-y-auto animate-bm-in p-4 sm:p-8">
+        <div className="fixed inset-0 z-50 bg-[#E9F2FF]/85 dark:bg-[#060A14]/95 backdrop-blur-2xl overflow-y-auto animate-bm-in p-3.5 sm:p-6 lg:p-8">
           <div className="max-w-6xl mx-auto">
-            <div className="flex items-center justify-between mb-8">
-              <span className="flex items-center rounded-full dark:bg-white/95 dark:px-3 dark:py-1.5 transition-colors">
+            <div className="flex items-center justify-between mb-4 sm:mb-6">
+              <span className="flex items-center rounded-xl dark:bg-white/95 dark:px-2.5 dark:py-1 transition-colors">
                 <Image
-                  src="/assets/Biz_logo_version4.png"
+                  src="/assets/bizlogov4-cropped.png"
                   alt="BizMagnets Logo"
-                  width={180}
-                  height={38}
-                  className="h-9 w-auto"
+                  width={735}
+                  height={197}
+                  className="h-7 sm:h-9 w-auto"
                 />
               </span>
               <button
                 type="button"
                 onClick={() => setMenuOpen(false)}
-                className="w-12 h-12 rounded-full border border-white/90 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur-md flex items-center justify-center text-2xl text-[#111C34] dark:text-[#EDF1FA] hover:bg-white dark:hover:bg-white/10 transition-all"
+                className="w-9 h-9 sm:w-11 sm:h-11 rounded-full border border-white/90 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur-md flex items-center justify-center text-xl text-[#111C34] dark:text-[#EDF1FA] hover:bg-white dark:hover:bg-white/10 transition-all"
                 aria-label="Close menu"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 lg:gap-4">
               {MENU_ITEMS.map((item, idx) => {
                 const IconComp = item.icon;
                 return (
@@ -261,18 +269,20 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenTrial }) => {
                     key={idx}
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
-                    className="p-6 rounded-2xl bg-white/70 dark:bg-white/5 border border-white/95 dark:border-white/10 shadow-lg backdrop-blur-md hover:-translate-y-1 hover:shadow-xl transition-all group"
+                    className="p-3 sm:p-4 lg:p-5 rounded-xl sm:rounded-2xl bg-white/75 dark:bg-white/5 border border-white/95 dark:border-white/10 shadow-sm sm:shadow-md backdrop-blur-md hover:-translate-y-0.5 hover:shadow-lg transition-all group flex flex-col justify-between"
                   >
-                    <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center mb-3 transition-transform group-hover:scale-110"
-                      style={{ backgroundColor: `${item.color}18` }}
-                    >
-                      <IconComp className="w-5 h-5" style={{ color: item.color }} />
+                    <div>
+                      <div
+                        className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl flex items-center justify-center mb-2 sm:mb-3 transition-transform group-hover:scale-110"
+                        style={{ backgroundColor: `${item.color}18` }}
+                      >
+                        <IconComp className="w-4 h-4 sm:w-5 sm:h-5" style={{ color: item.color }} />
+                      </div>
+                      <span className="block font-display text-sm sm:text-base lg:text-lg font-bold text-[#111C34] dark:text-[#EDF1FA] group-hover:text-[#1A73E8] dark:group-hover:text-[#4C9AFF] transition-colors leading-snug">
+                        {item.name}
+                      </span>
                     </div>
-                    <span className="block font-display text-xl font-bold text-[#111C34] dark:text-[#EDF1FA] group-hover:text-[#1A73E8] dark:group-hover:text-[#4C9AFF] transition-colors">
-                      {item.name}
-                    </span>
-                    <span className="block text-xs text-[#5C6B85] dark:text-[#93A1BE] mt-1.5">
+                    <span className="block text-[11px] sm:text-xs text-[#5C6B85] dark:text-[#93A1BE] mt-1 sm:mt-1.5 leading-snug line-clamp-2">
                       {item.blurb}
                     </span>
                   </a>
@@ -280,31 +290,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenTrial }) => {
               })}
             </div>
 
-            <div className="flex flex-wrap gap-4 mt-8 pt-6 border-t border-white/60 dark:border-white/10">
-              {/* Try BizMagnets Free — Glass Pill + Spinning WhatsApp-Green Sparkle */}
+            <div className="flex flex-wrap gap-2.5 sm:gap-3.5 mt-5 sm:mt-6 pt-4 sm:pt-6 border-t border-white/60 dark:border-white/10">
               <button
                 onClick={() => {
                   setMenuOpen(false);
                   onOpenTrial();
                 }}
-                className="relative inline-flex items-center gap-2 pl-5 pr-2 py-2 rounded-full flex-shrink-0 group bg-white/80 dark:bg-white/10 backdrop-blur-md border border-[#25D366]/40 dark:border-[#25D366]/35 shadow-[0_6px_20px_rgba(37,211,102,0.18)] hover:shadow-[0_8px_28px_rgba(37,211,102,0.32)] hover:border-[#25D366]/70 transition-all"
+                className="inline-flex items-center gap-2 bg-[#12A150] hover:bg-[#0E8A42] text-white font-semibold text-xs sm:text-sm px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-xl shadow-md shadow-[#12A150]/20 hover:shadow-lg transition-all"
               >
-                <Sparkles className="w-4 h-4 text-[#25D366] animate-bm-spin relative z-10" />
-                <span className="relative z-10 font-display font-bold text-sm text-[#111C34] dark:text-[#EDF1FA] tracking-tight whitespace-nowrap">
-                  Try BizMagnets
-                </span>
-                <span className="relative z-10 font-display italic font-extrabold text-[11px] uppercase tracking-widest text-white bg-[#25D366] rounded-full px-2.5 py-1.5 group-hover:bg-[#128C4A] transition-colors">
-                  Free
-                </span>
+                <Sparkles className="w-3.5 h-3.5 text-white animate-bm-spin" />
+                <span>Try BizMagnets Free</span>
+                <ArrowRight className="w-3.5 h-3.5 opacity-80" />
               </button>
               <button
                 onClick={() => {
                   setMenuOpen(false);
                   onOpenDemo();
                 }}
-                className="inline-flex items-center border-2 border-[#111C34] dark:border-white text-[#111C34] dark:text-white font-display font-bold text-sm px-6 py-3 rounded-full hover:bg-[#111C34] dark:hover:bg-white hover:text-white dark:hover:text-[#111C34] transition-all"
+                className="inline-flex items-center gap-2 bg-white dark:bg-white/5 border border-[#111C34]/15 dark:border-white/20 text-[#111C34] dark:text-[#EDF1FA] hover:bg-[#111C34]/5 dark:hover:bg-white/10 font-semibold text-xs sm:text-sm px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-xl transition-all"
               >
-                Book a Demo
+                <Calendar className="w-3.5 h-3.5 text-[#1A73E8] animate-bm-blink" />
+                <span>Book a Demo</span>
               </button>
             </div>
           </div>

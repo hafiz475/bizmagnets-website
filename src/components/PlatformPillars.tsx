@@ -178,10 +178,11 @@ export const PlatformPillars: React.FC = () => {
 
             <button
               onClick={() => setSelectedPillar(null)}
-              className="w-full py-3.5 rounded-full font-display font-bold text-sm text-white transition-all shadow-md"
+              className="w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm text-white transition-all shadow-md hover:brightness-105"
               style={{ backgroundColor: selectedPillar.color }}
             >
-              Got it
+              <Check className="w-4 h-4" />
+              <span>Got it</span>
             </button>
           </div>
         </div>

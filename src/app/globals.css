@@ -276,22 +276,12 @@ h1, h2, h3, h4, h5, h6 {
   transform-origin: center;
 }
 
-/* Login — arrow nudges toward the doorway it's entering */
-@keyframes bmLoginSlide {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(3px); }
+/* Book a Demo — calendar blinks like a live notification */
+@keyframes bmBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
 }
 
-.animate-bm-login-slide {
-  animation: bmLoginSlide 1.4s ease-in-out infinite;
-}
-
-/* Book a Demo — calendar gives a small confirming tilt-and-grow pulse */
-@keyframes bmCalendarPulse {
-  0%, 100% { transform: scale(1) rotate(0deg); }
-  50% { transform: scale(1.12) rotate(-4deg); }
-}
-
-.animate-bm-calendar-pulse {
-  animation: bmCalendarPulse 1.8s ease-in-out infinite;
+.animate-bm-blink {
+  animation: bmBlink 1.3s ease-in-out infinite;
 }

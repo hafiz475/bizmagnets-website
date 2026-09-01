@@ -1,7 +1,5 @@
-'use client';
-
 import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles, Calendar } from 'lucide-react';
 
 interface CtaBannerProps {
   onOpenDemo: () => void;
@@ -53,18 +51,21 @@ export const CtaBanner: React.FC<CtaBannerProps> = ({ onOpenDemo, onOpenTrial })
           Bring your messiest process. Fourteen days is plenty of time to embarrass a spreadsheet.
         </p>
 
-        <div className="flex flex-wrap items-center gap-4">
+        <div className="flex flex-wrap items-center gap-3.5">
           <button
             onClick={onOpenTrial}
-            className="inline-flex items-center gap-2 bg-white text-[#111C34] font-display font-extrabold text-sm sm:text-base px-8 py-4 rounded-full shadow-2xl shadow-black/30 hover:bg-[#EAF2FF] hover:-translate-y-0.5 transition-all"
+            className="inline-flex items-center gap-2.5 bg-white text-[#111C34] font-semibold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-xl hover:bg-[#EAF2FF] hover:-translate-y-0.5 transition-all"
           >
-            Try BizMagnets Free <ArrowRight className="w-4 h-4" />
+            <Sparkles className="w-4 h-4 text-[#12A150] animate-bm-spin" />
+            <span>Try BizMagnets Free</span>
+            <ArrowRight className="w-4 h-4 opacity-75" />
           </button>
           <button
             onClick={onOpenDemo}
-            className="inline-flex items-center text-white font-display font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-full border-2 border-white/40 hover:bg-white/10 transition-all"
+            className="inline-flex items-center gap-2.5 text-white font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl border border-white/30 hover:bg-white/10 transition-all"
           >
-            Book a Demo
+            <Calendar className="w-4 h-4 text-[#8BB6F5] animate-bm-blink" />
+            <span>Book a Demo</span>
           </button>
         </div>
       </div>
