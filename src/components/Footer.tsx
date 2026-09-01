@@ -41,11 +41,36 @@ export const Footer: React.FC = () => {
 
         <div className="pt-6 flex flex-wrap items-center justify-between gap-4 text-xs text-white/40">
           <span>&copy; 2026 BizMagnets. WhatsApp-first business operations. All rights reserved.</span>
-          <div className="flex gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-[#1A73E8]" />
-            <span className="w-2 h-2 rounded-full bg-[#EA3323]" />
-            <span className="w-2 h-2 rounded-full bg-[#F9AB00]" />
-            <span className="w-2 h-2 rounded-full bg-[#12A150]" />
+          {/* Vertical Music Frequency Wave Bars */}
+          <div className="flex items-center gap-1 h-5 px-1">
+            <span
+              className="w-[3px] h-[7px] rounded-full bg-[#1A73E8]"
+              style={{
+                animation: 'bmSoundWave1 2.4s ease-in-out 0s infinite',
+                transformOrigin: 'center',
+              }}
+            />
+            <span
+              className="w-[3px] h-[7px] rounded-full bg-[#EA3323]"
+              style={{
+                animation: 'bmSoundWave2 2.4s ease-in-out 0.35s infinite',
+                transformOrigin: 'center',
+              }}
+            />
+            <span
+              className="w-[3px] h-[7px] rounded-full bg-[#F9AB00]"
+              style={{
+                animation: 'bmSoundWave3 2.4s ease-in-out 0.70s infinite',
+                transformOrigin: 'center',
+              }}
+            />
+            <span
+              className="w-[3px] h-[7px] rounded-full bg-[#12A150]"
+              style={{
+                animation: 'bmSoundWave4 2.4s ease-in-out 1.05s infinite',
+                transformOrigin: 'center',
+              }}
+            />
           </div>
         </div>
       </div>

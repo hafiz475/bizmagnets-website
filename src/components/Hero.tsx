@@ -1,7 +1,18 @@
-'use client';
-
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, CheckCircle2, Clock, Calendar, Sparkles, Bell, Star } from 'lucide-react';
+import {
+  CheckCircle2,
+  Clock,
+  Calendar,
+  Sparkles,
+  Bell,
+  Star,
+  Ticket,
+  Zap,
+  Megaphone,
+  MapPin,
+  ShoppingBag,
+  Layers,
+} from 'lucide-react';
 import { BizPatternBackground } from './BizPatternBackground';
 
 interface HeroProps {
@@ -19,14 +30,14 @@ const HERO_STEPS = [
 ];
 
 const CAPABILITIES = [
-  'Ticketing',
-  'Workflows',
-  'Scheduling',
-  'Campaigns',
-  'Field Ops',
-  'Commerce',
-  'AI',
-  'Integrations',
+  { name: 'Ticketing', icon: Ticket, color: '#1A73E8' },
+  { name: 'Workflows', icon: Zap, color: '#EA3323' },
+  { name: 'Scheduling', icon: Calendar, color: '#F9AB00' },
+  { name: 'Campaigns', icon: Megaphone, color: '#12A150' },
+  { name: 'Field Ops', icon: MapPin, color: '#1A73E8' },
+  { name: 'Commerce', icon: ShoppingBag, color: '#EA3323' },
+  { name: 'AI', icon: Sparkles, color: '#F9AB00' },
+  { name: 'Integrations', icon: Layers, color: '#12A150' },
 ];
 
 export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
@@ -97,17 +108,44 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
         {/* Left Column - Copy & Value Proposition */}
         <div className="lg:col-span-7">
           {/* Eyebrow Badge */}
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/75 dark:bg-white/5 border border-white/90 dark:border-white/10 backdrop-blur-md shadow-sm text-xs font-extrabold tracking-widest text-[#111C34] dark:text-[#EDF1FA] mb-6">
+          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/75 dark:bg-white/5 border border-white/90 dark:border-white/10 backdrop-blur-md shadow-sm mb-6">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366" className="block">
               <path d="M12.04 2A9.9 9.9 0 0 0 2.1 11.9c0 1.75.46 3.46 1.34 4.97L2 22l5.28-1.38a9.9 9.9 0 0 0 4.76 1.21h.01c5.46 0 9.9-4.44 9.9-9.9A9.86 9.86 0 0 0 12.04 2Zm5.8 14.05c-.24.68-1.42 1.32-1.96 1.36-.5.04-.98.22-3.3-.69-2.77-1.09-4.54-3.9-4.68-4.08-.14-.18-1.12-1.49-1.12-2.84 0-1.35.71-2.02.96-2.29.25-.27.55-.34.73-.34h.53c.17 0 .4-.6.62.48.24.57.8 1.98.87 2.12.07.14.12.31.02.5-.1.18-.15.29-.29.45l-.44.51c-.14.14-.29.3-.12.58.16.29.73 1.2 1.56 1.94 1.07.95 1.98 1.25 2.26 1.39.28.14.44.12.61-.07.17-.2.7-.82.89-1.1.19-.28.37-.23.62-.14.25.09 1.6.76 1.87.9.28.14.46.21.53.32.07.11.07.65-.17 1.33Z" />
             </svg>
-            <div className="flex gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#1A73E8]" />
-              <span className="w-1.5 h-1.5 rounded-full bg-[#EA3323]" />
-              <span className="w-1.5 h-1.5 rounded-full bg-[#F9AB00]" />
-              <span className="w-1.5 h-1.5 rounded-full bg-[#12A150]" />
+            {/* Vertical Music Frequency Wave Bars */}
+            <div className="flex items-center gap-[3px] h-4 px-0.5">
+              <span
+                className="w-[2.5px] h-[6px] rounded-full bg-[#1A73E8]"
+                style={{
+                  animation: 'bmSoundWave1 2.4s ease-in-out 0s infinite',
+                  transformOrigin: 'center',
+                }}
+              />
+              <span
+                className="w-[2.5px] h-[6px] rounded-full bg-[#EA3323]"
+                style={{
+                  animation: 'bmSoundWave2 2.4s ease-in-out 0.35s infinite',
+                  transformOrigin: 'center',
+                }}
+              />
+              <span
+                className="w-[2.5px] h-[6px] rounded-full bg-[#F9AB00]"
+                style={{
+                  animation: 'bmSoundWave3 2.4s ease-in-out 0.70s infinite',
+                  transformOrigin: 'center',
+                }}
+              />
+              <span
+                className="w-[2.5px] h-[6px] rounded-full bg-[#12A150]"
+                style={{
+                  animation: 'bmSoundWave4 2.4s ease-in-out 1.05s infinite',
+                  transformOrigin: 'center',
+                }}
+              />
             </div>
-            WHATSAPP-FIRST BUSINESS OPERATIONS
+            <span className="text-[11px] sm:text-xs font-bold tracking-widest text-[#5C6B85] dark:text-[#93A1BE]">
+              WHATSAPP-FIRST BUSINESS OPERATIONS
+            </span>
           </div>
 
           <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.05] tracking-tight text-[#111C34] dark:text-[#EDF1FA] mb-6">
@@ -125,33 +163,43 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
 
           {/* Action CTAs */}
           <div className="flex flex-wrap items-center gap-4 mb-8">
+            {/* Try BizMagnets Free — Glass Pill + Spinning WhatsApp-Green Sparkle */}
             <button
               onClick={onOpenTrial}
-              className="inline-flex items-center gap-2 bg-[#1A73E8] text-white font-display font-extrabold text-sm sm:text-base px-8 py-4 rounded-full shadow-lg shadow-[#1A73E8]/30 hover:bg-[#1257B8] hover:-translate-y-0.5 transition-all"
+              className="relative inline-flex items-center gap-2.5 pl-6 pr-2.5 py-2.5 rounded-full flex-shrink-0 group bg-white/90 dark:bg-white/10 backdrop-blur-md border border-[#25D366]/45 dark:border-[#25D366]/35 shadow-[0_8px_24px_rgba(37,211,102,0.22)] hover:shadow-[0_10px_32px_rgba(37,211,102,0.38)] hover:border-[#25D366]/75 transition-all"
             >
-              Try BizMagnets Free <ArrowRight className="w-4 h-4" />
+              <Sparkles className="w-5 h-5 text-[#25D366] animate-bm-spin relative z-10" />
+              <span className="relative z-10 font-display font-extrabold text-sm sm:text-base text-[#111C34] dark:text-[#EDF1FA] tracking-tight whitespace-nowrap">
+                Try BizMagnets
+              </span>
+              <span className="relative z-10 font-display italic font-extrabold text-xs sm:text-[13px] uppercase tracking-widest text-white bg-[#25D366] rounded-full px-3 py-1.5 group-hover:bg-[#128C4A] transition-colors">
+                Free
+              </span>
             </button>
             <button
               onClick={onOpenDemo}
-              className="inline-flex items-center text-[#111C34] dark:text-[#EDF1FA] font-display font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-full border-2 border-[#111C34] dark:border-white hover:bg-[#111C34] dark:hover:bg-white hover:text-white dark:hover:text-[#111C34] transition-all"
+              className="inline-flex items-center gap-2 bg-[#12A150] dark:bg-[#3DDC8A] text-white dark:text-[#0A0F1E] font-display font-extrabold text-sm sm:text-base px-7 py-3.5 rounded-full shadow-lg shadow-[#12A150]/30 hover:bg-[#0F8A44] dark:hover:bg-[#2ECC81] hover:-translate-y-0.5 transition-all"
             >
+              <Calendar className="w-4 h-4 animate-bm-calendar-pulse" />
               Book a Demo
             </button>
           </div>
 
-          {/* Capability Chips */}
+          {/* Capability Chips with Icons */}
           <div className="flex flex-wrap gap-2">
             {CAPABILITIES.map((cap, idx) => {
-              const colors = ['#1A73E8', '#EA3323', '#F9AB00', '#12A150'];
-              const color = colors[idx % colors.length];
+              const IconComp = cap.icon;
               return (
                 <span
                   key={idx}
-                  className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/70 dark:bg-white/5 border border-[#111C34]/10 dark:border-white/10 backdrop-blur-sm text-xs font-bold text-[#111C34] shadow-sm"
-                  style={{ borderColor: `${color}40`, color: color }}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 dark:bg-white/5 border backdrop-blur-sm text-xs font-bold shadow-sm transition-all hover:scale-105 hover:shadow-md cursor-default"
+                  style={{
+                    borderColor: `${cap.color}45`,
+                    color: cap.color,
+                  }}
                 >
-                  <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: color }} />
-                  {cap}
+                  <IconComp className="w-3.5 h-3.5" style={{ color: cap.color }} />
+                  <span>{cap.name}</span>
                 </span>
               );
             })}

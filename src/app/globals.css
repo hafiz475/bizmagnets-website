@@ -66,14 +66,16 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.03em;
 }
 
-a {
-  color: var(--blue);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
+@layer base {
+  a {
+    color: var(--blue);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
 
-a:hover {
-  color: var(--blue-700);
+  a:hover {
+    color: var(--blue-700);
+  }
 }
 
 ::selection {
@@ -112,6 +114,35 @@ a:hover {
 
 @keyframes bmSpin {
   to { transform: rotate(360deg); }
+}
+
+@keyframes bmFrequency {
+  0%, 100% {
+    transform: translateY(2.5px) scale(0.92);
+  }
+  50% {
+    transform: translateY(-2.5px) scale(1.15);
+  }
+}
+
+@keyframes bmSoundWave1 {
+  0%, 100% { transform: scaleY(0.4); }
+  50% { transform: scaleY(2.5); }
+}
+
+@keyframes bmSoundWave2 {
+  0%, 100% { transform: scaleY(2.2); }
+  50% { transform: scaleY(0.35); }
+}
+
+@keyframes bmSoundWave3 {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(2.9); }
+}
+
+@keyframes bmSoundWave4 {
+  0%, 100% { transform: scaleY(2.0); }
+  50% { transform: scaleY(0.45); }
 }
 
 @keyframes bmSpark {
@@ -213,10 +244,54 @@ a:hover {
   animation: bmThemeIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
-@keyframes bmAuroraSpin {
-  to { transform: rotate(360deg); }
+/* Custom elastic hamburger — each line breathes independently and
+   morphs mid-cycle into a sidebar-style silhouette (full top/bottom
+   bars, short left-aligned middle bar) before springing back. */
+@keyframes bmHamLineOuter {
+  0%, 100% { transform: scaleX(1); }
+  35% { transform: scaleX(0.55); }
+  50% { transform: scaleX(1.2); }
+  72% { transform: scaleX(0.7); }
 }
 
-.animate-bm-aurora {
-  animation: bmAuroraSpin 4s linear infinite;
+@keyframes bmHamLineMid {
+  0%, 100% { transform: scaleX(1) translateX(0); }
+  35% { transform: scaleX(1.15) translateX(0); }
+  50% { transform: scaleX(0.42) translateX(-29%); }
+  72% { transform: scaleX(0.6) translateX(-20%); }
+}
+
+.animate-bm-ham-1 {
+  animation: bmHamLineOuter 3.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  transform-origin: center;
+}
+
+.animate-bm-ham-2 {
+  animation: bmHamLineMid 3.4s cubic-bezier(0.65, 0, 0.35, 1) infinite 0.09s;
+  transform-origin: left center;
+}
+
+.animate-bm-ham-3 {
+  animation: bmHamLineOuter 3.4s cubic-bezier(0.65, 0, 0.35, 1) infinite 0.18s;
+  transform-origin: center;
+}
+
+/* Login — arrow nudges toward the doorway it's entering */
+@keyframes bmLoginSlide {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(3px); }
+}
+
+.animate-bm-login-slide {
+  animation: bmLoginSlide 1.4s ease-in-out infinite;
+}
+
+/* Book a Demo — calendar gives a small confirming tilt-and-grow pulse */
+@keyframes bmCalendarPulse {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.12) rotate(-4deg); }
+}
+
+.animate-bm-calendar-pulse {
+  animation: bmCalendarPulse 1.8s ease-in-out infinite;
 }
