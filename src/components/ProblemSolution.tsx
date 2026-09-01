@@ -1,29 +1,11 @@
-'use client';
-
 import React from 'react';
+import { BizPatternBackground } from './BizPatternBackground';
 
 export const ProblemSolution: React.FC = () => {
   return (
     <section id="solutions" className="relative overflow-hidden py-16 lg:py-24">
-      {/* Background Animated SVG Accents */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.16]">
-        <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" className="w-full h-full">
-          <g fill="none" stroke="#12A150" strokeWidth="4" strokeLinecap="round" className="animate-bm-drift">
-            <rect x="120" y="80" width="176" height="98" rx="26" />
-            <path d="M148 178 L148 206 L176 178" />
-            <path d="M330 200 h90" strokeDasharray="14 16" />
-            <rect x="470" y="120" width="150" height="86" rx="22" />
-            <path d="M604 206 L604 232 L580 206" />
-            <path d="M700 320 h120" strokeDasharray="14 16" />
-            <rect x="860" y="420" width="190" height="104" rx="28" />
-            <path d="M888 524 L888 552 L918 524" />
-            <path d="M180 480 q26 -34 52 0 t52 0" />
-            <circle cx="640" cy="580" r="40" />
-            <path d="M628 566 q12 -18 24 0 t-12 16" />
-            <path d="M640 596 v2" />
-          </g>
-        </svg>
-      </div>
+      {/* 12-Icon Multi-Communication Animated Background */}
+      <BizPatternBackground opacity={0.16} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#111C34] max-w-3xl mb-4 text-balance">

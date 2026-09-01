@@ -1,7 +1,6 @@
-'use client';
-
 import React, { useState } from 'react';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import { BizPatternBackground } from './BizPatternBackground';
 
 export const INDUSTRIES = [
   {
@@ -61,21 +60,8 @@ export const IndustryWorkflows: React.FC = () => {
 
   return (
     <section id="industries" className="relative bg-gradient-to-b from-[#F7FAFF] to-white border-t border-[#111C34]/10 overflow-hidden py-16 lg:py-24">
-      {/* Background Animated SVG Accents */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.16]">
-        <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" className="w-full h-full">
-          <g fill="none" stroke="#12A150" strokeWidth="4" strokeLinecap="round" className="animate-bm-drift">
-            <path d="M120 180 l160 -56 -60 152 -26 -66z" />
-            <path d="M480 420 l170 -60 -64 162 -28 -70z" />
-            <path d="M880 120 l160 -56 -60 152 -26 -66z" />
-            <rect x="300" y="80" width="150" height="86" rx="22" />
-            <path d="M326 166 L326 192 L352 166" />
-            <rect x="760" y="470" width="176" height="98" rx="26" />
-            <path d="M910 568 L910 596 L884 568" />
-            <path d="M180 540 l16 18 36 -40" />
-          </g>
-        </svg>
-      </div>
+      {/* 12-Icon Multi-Communication Animated Background */}
+      <BizPatternBackground opacity={0.16} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-xs font-bold tracking-widest text-[#EA3323] mb-3">

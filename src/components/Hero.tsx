@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, CheckCircle2, Clock, Calendar, Sparkles, Bell, Star } from 'lucide-react';
+import { BizPatternBackground } from './BizPatternBackground';
 
 interface HeroProps {
   onOpenDemo: () => void;
@@ -88,36 +89,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenDemo, onOpenTrial }) => {
           }}
         />
         
-        {/* Animated Light-Themed Green SVG Message Icons Background */}
-        <svg
-          viewBox="0 0 1200 700"
-          preserveAspectRatio="xMidYMid slice"
-          className="absolute inset-0 w-full h-full opacity-[0.22] pointer-events-none"
-        >
-          <g fill="none" stroke="#12A150" strokeWidth="3.5" className="animate-bm-drift">
-            <rect x="60" y="30" width="150" height="86" rx="22" />
-            <path d="M84 116 L84 142 L110 116" />
-            <rect x="430" y="16" width="176" height="96" rx="24" />
-            <path d="M580 112 L580 140 L554 112" />
-            <circle cx="470" cy="64" r="7" />
-            <circle cx="506" cy="64" r="7" />
-            <circle cx="542" cy="64" r="7" />
-            <path d="M700 70 l150 -52 -56 142 -24 -62z" />
-            <rect x="900" y="24" width="150" height="86" rx="22" />
-            <path d="M1034 110 L1034 136 L1010 110" />
-            <rect x="330" y="320" width="180" height="98" rx="24" />
-            <path d="M356 418 L356 446 L384 418" />
-            <rect x="760" y="120" width="164" height="92" rx="22" />
-            <path d="M900 212 L900 240 L874 212" />
-            <rect x="980" y="430" width="150" height="86" rx="22" />
-            <path d="M1114 516 L1114 542 L1090 516" />
-            <rect x="180" y="480" width="132" height="78" rx="20" />
-            <path d="M204 558 L204 582 L228 558" />
-            <path d="M110 130 l14 16 30 -34" strokeLinecap="round" />
-            <path d="M382 366 l16 18 34 -38" strokeLinecap="round" />
-            <path d="M806 166 l14 16 30 -34" strokeLinecap="round" />
-          </g>
-        </svg>
+        {/* 12-Icon Multi-Communication Animated Background */}
+        <BizPatternBackground opacity={0.22} />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">

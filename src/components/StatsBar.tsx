@@ -1,7 +1,6 @@
-'use client';
-
 import React from 'react';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { BizPatternBackground } from './BizPatternBackground';
 
 interface StatsBarProps {
   onOpenStory?: () => void;
@@ -10,25 +9,8 @@ interface StatsBarProps {
 export const StatsBar: React.FC<StatsBarProps> = ({ onOpenStory }) => {
   return (
     <section id="customers" className="relative bg-gradient-to-r from-[#F2FBF5] to-[#EFF6FF] border-y border-[#111C34]/10 overflow-hidden py-12 lg:py-16">
-      {/* Background SVG Grid Accents */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.18]">
-        <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" className="w-full h-full">
-          <g fill="none" stroke="#12A150" strokeWidth="4" strokeLinecap="round" className="animate-bm-drift">
-            <rect x="80" y="90" width="180" height="100" rx="26" />
-            <path d="M108 190 L108 218 L136 190" />
-            <circle cx="130" cy="140" r="7" />
-            <circle cx="166" cy="140" r="7" />
-            <circle cx="202" cy="140" r="7" />
-            <rect x="560" y="380" width="200" height="110" rx="28" />
-            <path d="M588 490 L588 520 L618 490" />
-            <path d="M600 430 l18 20 38 -42" />
-            <rect x="940" y="120" width="170" height="96" rx="24" />
-            <path d="M1084 216 L1084 244 L1058 216" />
-            <circle cx="300" cy="560" r="46" />
-            <path d="M282 560 l14 16 28 -32" />
-          </g>
-        </svg>
-      </div>
+      {/* 12-Icon Multi-Communication Animated Background */}
+      <BizPatternBackground opacity={0.18} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
