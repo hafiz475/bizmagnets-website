@@ -167,16 +167,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenTrial }) => {
                 className="flex-shrink-0 flex items-center pl-2 transition-transform hover:scale-[1.02]"
                 aria-label="BizMagnets Home"
               >
-                <span className="flex items-center rounded-full dark:bg-white/95 dark:px-3 dark:py-1.5 transition-colors">
-                  <Image
-                    src="/assets/bizlogov4-cropped.png"
-                    alt="BizMagnets"
-                    width={735}
-                    height={197}
-                    className="h-10 sm:h-12 w-auto"
-                    priority
-                  />
-                </span>
+                <Image
+                  src={theme === 'dark' ? '/assets/bizlogov4-cropped-dark.png' : '/assets/bizlogov4-cropped.png'}
+                  alt="BizMagnets"
+                  width={735}
+                  height={197}
+                  className="h-10 sm:h-12 w-auto"
+                  priority
+                />
               </a>
 
               <span className="flex-1" />
@@ -242,15 +240,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemo, onOpenTrial }) => {
         <div className="fixed inset-0 z-50 bg-[#E9F2FF]/85 dark:bg-[#060A14]/95 backdrop-blur-2xl overflow-y-auto animate-bm-in p-3.5 sm:p-6 lg:p-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-between mb-4 sm:mb-6">
-              <span className="flex items-center rounded-xl dark:bg-white/95 dark:px-2.5 dark:py-1 transition-colors">
-                <Image
-                  src="/assets/bizlogov4-cropped.png"
-                  alt="BizMagnets Logo"
-                  width={735}
-                  height={197}
-                  className="h-7 sm:h-9 w-auto"
-                />
-              </span>
+              <Image
+                src={theme === 'dark' ? '/assets/bizlogov4-cropped-dark.png' : '/assets/bizlogov4-cropped.png'}
+                alt="BizMagnets Logo"
+                width={735}
+                height={197}
+                className="h-7 sm:h-9 w-auto"
+              />
               <button
                 type="button"
                 onClick={() => setMenuOpen(false)}

@@ -98,8 +98,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes bmPulse {
-  0%, 100% { opacity: 0.35; transform: scale(0.9); }
-  50% { opacity: 1; transform: scale(1.15); }
+  0%, 100% { opacity: 0.55; transform: scale(0.96); }
+  50% { opacity: 1; transform: scale(1.08); }
 }
 
 @keyframes bmFloat {
@@ -147,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @keyframes bmSpark {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.35); }
+  50% { transform: scale(1.15); }
 }
 
 @keyframes bmDash {
@@ -159,25 +159,29 @@ h1, h2, h3, h4, h5, h6 {
   to { opacity: 1; transform: none; }
 }
 
-/* Utility Animations */
+/* Utility Animations - Relaxed & Graceful */
 .animate-bm-pulse {
-  animation: bmPulse 1.1s ease-in-out infinite;
+  animation: bmPulse 3.6s ease-in-out infinite;
+}
+
+.animate-bm-spark {
+  animation: bmSpark 4.2s ease-in-out infinite;
 }
 
 .animate-bm-float {
-  animation: bmFloat 12s ease-in-out infinite;
+  animation: bmFloat 14s ease-in-out infinite;
 }
 
 .animate-bm-spin {
-  animation: bmSpin 3.2s linear infinite;
+  animation: bmSpin 16s linear infinite;
 }
 
 .animate-bm-dash {
-  animation: bmDash 2.4s linear infinite;
+  animation: bmDash 3.6s linear infinite;
 }
 
 .animate-bm-drift {
-  animation: bmDrift 40s linear infinite;
+  animation: bmDrift 48s linear infinite;
 }
 
 .animate-bm-in {
